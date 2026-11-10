@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diwali Card Banao · Confuse Coder</title>
+<meta name="description" content="Apna naam daalo, Diwali wish card turant ready. 4 designs. Naam kahin save nahi hota.">
+<meta property="og:title" content="Apna Diwali card banao 🪔">
+<meta property="og:description" content="Naam daalo → card ready → seedha WhatsApp pe bhejo. 4 designs, free.">
+<meta name="theme-color" content="#1a0508">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Great+Vibes&family=Poppins:wght@400;500;600&family=Yatra+One&display=swap" rel="stylesheet">
+<style>
+  :root{a
+    --bg:#1a0508; --bg2:#3a0a14; --panel:rgba(255,255,255,0.06); --line:rgba(246,196,83,0.25);
+    --gold:#F6C453; --gold2:#FFE9A8; --text:#FBEBD3; --muted:#C9A98A; --accent:#FF8A1F; --ok:#25D366;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0}
+  body{
+    font-family:"Poppins",system-ui,sans-serif;color:var(--text);min-height:100vh;
+    background:radial-gradient(120% 70% at 50% 0%, var(--bg2) 0%, var(--bg) 60%) fixed, var(--bg);
+  }
+  .wrap{max-width:480px;margin:0 auto;padding:20px 16px calc(28px + env(safe-area-inset-bottom))}
+  header{text-align:center;margin:4px 0 16px}
+  header .lamp{font-size:34px;filter:drop-shadow(0 0 12px rgba(255,170,60,.7))}
+  h1{font-family:"Yatra One","Poppins",sans-serif;font-weight:400;font-size:30px;margin:2px 0 4px;
+     background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,#C8871E);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  .field{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:14px}
+  .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px;letter-spacing:.04em}
+  #name{width:100%;font:500 19px "Poppins",sans-serif;color:var(--text);background:transparent;border:0;outline:0;padding:2px 0}
+  #name::placeholder{color:rgba(251,235,211,.35)}
+  .field.shake{animation:shake .35s;border-color:var(--accent)}
+  @keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+  .privacy{font-size:12px;color:var(--muted);margin-top:8px}
+  .preview{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);
+     box-shadow:0 10px 40px rgba(0,0,0,.5),0 0 60px rgba(255,140,40,.12);background:#2a070e;aspect-ratio:1/1}
+  .preview img{display:block;width:100%;height:100%;-webkit-touch-callout:default;user-select:auto}
+  .sec{font-size:12px;color:var(--muted);margin:16px 2px 8px;letter-spacing:.04em}
+  .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .thumb{appearance:none;border:2px solid transparent;background:var(--panel);border-radius:14px;padding:4px 4px 6px;cursor:pointer;color:var(--text);font:500 12px "Poppins",sans-serif}
+  .thumb canvas{display:block;width:100%;aspect-ratio:1/1;border-radius:10px}
+  .thumb span{display:block;margin-top:5px}
+  .thumb[aria-checked="true"]{border-color:var(--gold);box-shadow:0 0 18px rgba(246,196,83,.35)}
+  .hint{display:none;margin-top:16px;background:rgba(255,138,31,.12);border:1px solid rgba(255,138,31,.45);border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.5}
+  .hint.show{display:block}
+  .hint{margin:0 0 14px;border-color:var(--gold);background:rgba(246,196,83,.10)}
+  .hint a{display:block;text-align:center;margin-top:10px;color:#1a0508;background:var(--gold);padding:12px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px}
+  .hint .small{margin-top:8px;font-size:12px;color:var(--muted)}
+  .hint.pulse{animation:pulse .6s 2}
+  @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(246,196,83,.35)}}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+  .btn{appearance:none;border:0;border-radius:14px;padding:15px 10px;font:600 16px "Poppins",sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+  .btn:active{transform:scale(.98)}
+  .btn.share{background:var(--ok);color:#06210f}
+  .btn.dl{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#3a1a05}
+  .btn svg{width:20px;height:20px}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:22px}
+  footer a{color:var(--gold);text-decoration:none;font-weight:500}
+  .follow{margin:16px 0 8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  .socials{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  .soc{display:flex;align-items:center;gap:6px;padding:9px 10px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--text)!important;font-size:14px}
+  .soc svg{width:22px;height:22px}
+  .soc.yt svg{color:#FF0033}
+  .soc.ig svg{color:#fff;background:linear-gradient(45deg,#F58529,#DD2A7B 50%,#8134AF);border-radius:6px;padding:2px}
+  .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;
+     background:#fff7e8;color:#3a1a05;padding:10px 16px;border-radius:12px;font-size:14px;font-weight:500;
+     box-shadow:0 8px 30px rgba(0,0,0,.4);transition:.25s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="lamp">🪔</div>
+    <h1>Diwali Card Banao</h1>
+    <p>Naam daalo → card ready → WhatsApp pe bhejo</p>
+  </header>
+
+  <div class="hint" id="hint">
+    📌 <b>Instagram ke andar download nahi hota.</b> <span id="hintBrowser">Browser</span> mein kholo, wahan card turant save hoga.
+    <a id="openExt" href="#">Browser mein kholo</a>
+    <div class="small" id="hintManual"></div>
+  </div>
+
+  <div class="field" id="field">
+    <label for="name">TUMHARA NAAM</label>
+    <input id="name" maxlength="32" placeholder="Apna naam likho…" autocomplete="off" autocapitalize="words" enterkeyhint="done">
+    <div class="privacy">🔒 Naam sirf tumhare phone mein rehta hai, kahin save nahi hota.</div>
+  </div>
+
+  <div class="preview"><img id="preview" alt="Tumhara Diwali card"></div>
+
+  <div class="sec">DESIGN CHUNO</div>
+  <div class="thumbs" id="thumbs" role="radiogroup" aria-label="Card design"></div>
+
+
+  <div class="actions">
+    <button class="btn share" id="share">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+      Share
+    </button>
+    <button class="btn dl" id="dl">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+      Download
+    </button>
+  </div>
+
+  <footer>
+    <div>Made with 🪔 by <a href="https://instagram.com/confuse_coder.dev" target="_blank" rel="noopener">@confuse_coder.dev</a></div>
+    <div class="follow">Follow karo</div>
+    <div class="socials">
+      <a class="soc yt" href="https://www.youtube.com/@ConfuseCoder23" target="_blank" rel="noopener" aria-label="YouTube: Confuse Coder">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8z"/><path fill="#fff" d="M9.75 15.3V8.7L15.5 12z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a class="soc ig" href="https://www.instagram.com/confuse__coder/" target="_blank" rel="noopener" aria-label="Instagram: confuse__coder">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span>Instagram</span>
+      </a>
+      <a class="soc ig dev" href="https://instagram.com/confuse_coder.dev" target="_blank" rel="noopener" aria-label="Instagram: confuse_coder.dev">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span>.dev</span>
+      </a>
+    </div>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== Settings ===== */
+// Host karne ke baad apna link yahan daalo (https:// ke bina), e.g. 'confusecoder-diwali.netlify.app'.
+// Ye card ke watermark aur share text mein aayega.
+const SITE_URL = 'diwali-sites.netlify.app';
+const HANDLE = '@confuse_coder.dev';
+const S = 1080; // card size: 1080 × 1080
+
+/* ===== Fonts ===== */
+const F_DEV = '"Yatra One", "Poppins", sans-serif';
+const F_SANS = '"Poppins", sans-serif';
+const F_SERIF = '"Cinzel", serif';
+const F_SCRIPT = '"Great Vibes", "Yatra One", cursive';
+const FAMS = ['"Yatra One"', '"Poppins"', '"Cinzel"', '"Great Vibes"'];
+
+async function fontsFor(text){
+  const loads = FAMS.flatMap(f => [
+    document.fonts.load(`40px ${f}`, text),
+    document.fonts.load(`600 40px ${f}`, text),
+  ]);
+  try { await Promise.race([Promise.all(loads), new Promise(r => setTimeout(r, 2500))]); } catch(e) {}
+}
+
+/* ===== Drawing helpers ===== */
+function rng(seed){ return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+function goldFill(ctx, y, sz){
+  const g = ctx.createLinearGradient(0, y - sz * 0.85, 0, y + sz * 0.15);
+  g.addColorStop(0, '#FFF1BF'); g.addColorStop(0.45, '#F6C453'); g.addColorStop(1, '#B9771A');
+  return g;
+}
+
+function txt(ctx, s, x, y, o){
+  const { family, size, weight = '400', fill = '#fff', maxW = 920, spacing = 0, glow } = o;
+  let sz = size;
+  ctx.save();
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  if ('letterSpacing' in ctx) ctx.letterSpacing = spacing + 'px';
+  for (;;) { ctx.font = `${weight} ${sz}px ${family}`; if (ctx.measureText(s).width <= maxW || sz <= 18) break; sz -= 2; }
+  ctx.fillStyle = fill === 'gold' ? goldFill(ctx, y, sz) : fill;
+  if (glow) { ctx.shadowColor = glow; ctx.shadowBlur = sz * 0.35; }
+  ctx.fillText(s, x, y);
+  ctx.restore();
+  return sz;
+}
+
+function bokeh(ctx, seed, n, rgb, aMax = 0.3, yMax = S){
+  const r = rng(seed);
+  ctx.save(); ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < n; i++) {
+    const x = r() * S, y = r() * yMax, rad = 10 + r() * 60, a = 0.06 + r() * aMax;
+    const g = ctx.createRadialGradient(x, y, 0, x, y, rad);
+    g.addColorStop(0, `rgba(${rgb},${a})`); g.addColorStop(1, `rgba(${rgb},0)`);
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, rad, 0, 7); ctx.fill();
+  }
+  ctx.restore();
+}
+
+function sparkle(ctx, x, y, r, col){
+  ctx.save(); ctx.fillStyle = col; ctx.shadowColor = col; ctx.shadowBlur = r;
+  ctx.beginPath(); ctx.moveTo(x, y - r);
+  ctx.quadraticCurveTo(x, y, x + r, y); ctx.quadraticCurveTo(x, y, x, y + r);
+  ctx.quadraticCurveTo(x, y, x - r, y); ctx.quadraticCurveTo(x, y, x, y - r);
+  ctx.fill(); ctx.restore();
+}
+
+function flamePath(ctx, x, y, w, h){
+  ctx.beginPath(); ctx.moveTo(x, y - h);
+  ctx.bezierCurveTo(x + w * 1.1, y - h * 0.55, x + w, y, x, y);
+  ctx.bezierCurveTo(x - w, y, x - w * 1.1, y - h * 0.55, x, y - h);
+  ctx.closePath();
+}
+
+// cy = rim line of the bowl
+function drawDiya(ctx, cx, cy, s, glow = 1){
+  ctx.save();
+  if (glow) {
+    const gy = cy - 80 * s, gr = 300 * s * glow;
+    ctx.globalCompositeOperation = 'lighter';
+    const g = ctx.createRadialGradient(cx, gy, 0, cx, gy, gr);
+    g.addColorStop(0, 'rgba(255,190,80,0.55)'); g.addColorStop(0.4, 'rgba(255,140,40,0.18)'); g.addColorStop(1, 'rgba(255,120,30,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, gy, gr, 0, 7); ctx.fill();
+    ctx.globalCompositeOperation = 'source-over';
+  }
+  const w = 120 * s, d = 80 * s;
+  // stand
+  ctx.fillStyle = '#5E1F08';
+  ctx.beginPath(); ctx.ellipse(cx, cy + d * 0.8, w * 0.38, 12 * s, 0, 0, 7); ctx.fill();
+  // bowl
+  const bg = ctx.createLinearGradient(cx - w, cy, cx + w, cy + d);
+  bg.addColorStop(0, '#F59A4A'); bg.addColorStop(0.5, '#C8561E'); bg.addColorStop(1, '#7A2A0C');
+  ctx.fillStyle = bg;
+  ctx.beginPath(); ctx.moveTo(cx - w, cy);
+  ctx.bezierCurveTo(cx - w * 0.9, cy + d * 1.15, cx + w * 0.9, cy + d * 1.15, cx + w, cy);
+  ctx.closePath(); ctx.fill();
+  // decorations
+  ctx.fillStyle = '#FFD36B';
+  for (let i = -3; i <= 3; i++) {
+    ctx.beginPath(); ctx.arc(cx + i * w * 0.22, cy + 36 * s - Math.abs(i) * 4 * s, 5.5 * s, 0, 7); ctx.fill();
+  }
+  ctx.strokeStyle = 'rgba(255,211,107,0.8)'; ctx.lineWidth = 3 * s;
+  ctx.beginPath(); ctx.moveTo(cx - w * 0.78, cy + 18 * s);
+  ctx.bezierCurveTo(cx - w * 0.4, cy + 30 * s, cx + w * 0.4, cy + 30 * s, cx + w * 0.78, cy + 18 * s); ctx.stroke();
+  // rim + oil
+  ctx.fillStyle = '#4A1606';
+  ctx.beginPath(); ctx.ellipse(cx, cy, w, 18 * s, 0, 0, 7); ctx.fill();
+  ctx.strokeStyle = '#F6C453'; ctx.lineWidth = 4 * s; ctx.stroke();
+  // wick
+  ctx.strokeStyle = '#2b1206'; ctx.lineWidth = 5 * s; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(cx, cy - 2 * s); ctx.lineTo(cx, cy - 16 * s); ctx.stroke();
+  // flame
+  const fy = cy - 12 * s, fh = 145 * s, fw = 40 * s;
+  const fg = ctx.createRadialGradient(cx, fy - fh * 0.22, 2, cx, fy - fh * 0.35, fh * 0.8);
+  fg.addColorStop(0, '#FFFFFF'); fg.addColorStop(0.25, '#FFF3A0'); fg.addColorStop(0.6, '#FFB52E'); fg.addColorStop(1, '#FF6A00');
+  flamePath(ctx, cx, fy, fw, fh);
+  ctx.fillStyle = fg; ctx.shadowColor = 'rgba(255,170,40,0.95)'; ctx.shadowBlur = 45 * s; ctx.fill(); ctx.shadowBlur = 0;
+  flamePath(ctx, cx, fy - 4 * s, fw * 0.42, fh * 0.42);
+  ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fill();
+  ctx.restore();
+}
+
+function mandala(ctx, cx, cy, r, col, lw){
+  ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = lw;
+  for (const k of [1, 0.82, 0.64]) { ctx.beginPath(); ctx.arc(cx, cy, r * k, 0, 7); ctx.stroke(); }
+  const n = 24;
+  for (let i = 0; i < n; i++) {
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(i / n * Math.PI * 2);
+    ctx.beginPath(); ctx.ellipse(0, -r * 0.91, r * 0.05, r * 0.09, 0, 0, 7); ctx.stroke();
+    ctx.beginPath(); ctx.arc(0, -r * 0.73, r * 0.018, 0, 7); ctx.stroke();
+    ctx.restore();
+  }
+  ctx.restore();
+}
+
+function rangoli(ctx, cx, cy, R, pal){
+  ctx.save(); ctx.translate(cx, cy);
+  ctx.beginPath(); ctx.arc(0, 0, R, 0, 7); ctx.fillStyle = pal[4]; ctx.fill();
+  const rings = [
+    { n: 16, r: R * 0.82, w: R * 0.09, h: R * 0.15 },
+    { n: 12, r: R * 0.58, w: R * 0.1, h: R * 0.17 },
+    { n: 8, r: R * 0.35, w: R * 0.1, h: R * 0.16 },
+  ];
+  rings.forEach((g, i) => {
+    for (let k = 0; k < g.n; k++) {
+      ctx.save(); ctx.rotate(k / g.n * Math.PI * 2 + i * 0.2);
+      ctx.beginPath(); ctx.ellipse(0, -g.r, g.w, g.h, 0, 0, 7);
+      ctx.fillStyle = pal[(i + (k % 2)) % 4]; ctx.fill();
+      ctx.beginPath(); ctx.arc(0, -g.r, g.w * 0.35, 0, 7); ctx.fillStyle = '#FFF8EA'; ctx.fill();
+      ctx.restore();
+    }
+  });
+  ctx.beginPath(); ctx.arc(0, 0, R * 0.18, 0, 7); ctx.fillStyle = pal[3]; ctx.fill();
+  ctx.beginPath(); ctx.arc(0, 0, R * 0.09, 0, 7); ctx.fillStyle = '#FFF8EA'; ctx.fill();
+  for (let k = 0; k < 40; k++) {
+    const a = k / 40 * Math.PI * 2;
+    ctx.beginPath(); ctx.arc(Math.cos(a) * R * 1.07, Math.sin(a) * R * 1.07, R * 0.022, 0, 7);
+    ctx.fillStyle = pal[k % 4]; ctx.fill();
+  }
+  ctx.restore();
+}
+
+function marigold(ctx, x, y, r, c){
+  ctx.save();
+  const g = ctx.createRadialGradient(x - r * 0.3, y - r * 0.3, 1, x, y, r);
+  g.addColorStop(0, '#FFE07A'); g.addColorStop(1, c);
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+  ctx.fillStyle = 'rgba(160,60,0,0.35)';
+  for (let k = 0; k < 8; k++) { const a = k / 8 * Math.PI * 2; ctx.beginPath(); ctx.arc(x + Math.cos(a) * r * 0.55, y + Math.sin(a) * r * 0.55, r * 0.14, 0, 7); ctx.fill(); }
+  ctx.restore();
+}
+
+function leaf(ctx, x, y, s){
+  ctx.save();
+  ctx.fillStyle = '#2F8F3E';
+  ctx.beginPath(); ctx.moveTo(x, y);
+  ctx.quadraticCurveTo(x + 15 * s, y + 30 * s, x, y + 62 * s);
+  ctx.quadraticCurveTo(x - 15 * s, y + 30 * s, x, y); ctx.fill();
+  ctx.strokeStyle = '#1C5E27'; ctx.lineWidth = 2 * s;
+  ctx.beginPath(); ctx.moveTo(x, y + 4 * s); ctx.lineTo(x, y + 56 * s); ctx.stroke();
+  ctx.restore();
+}
+
+function toran(ctx){
+  const dips = 3, base = 22, sag = 58, pts = [];
+  for (let x = -12; x <= S + 12; x += 25) {
+    const t = ((x + 12) / (S + 24)) * dips, f = t - Math.floor(t);
+    pts.push([x, base + sag * Math.sin(Math.PI * f)]);
+  }
+  pts.forEach(([x, y], i) => { if (i % 2 === 0) leaf(ctx, x, y + 10, 1); });
+  pts.forEach(([x, y], i) => marigold(ctx, x, y, 17, i % 2 ? '#FFB000' : '#FF7A00'));
+}
+
+function kandil(ctx, x, top, len, c1, c2){
+  ctx.save();
+  ctx.strokeStyle = 'rgba(246,196,83,0.7)'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x, top + len); ctx.stroke();
+  const cy = top + len + 55;
+  ctx.globalCompositeOperation = 'lighter';
+  const gl = ctx.createRadialGradient(x, cy, 0, x, cy, 150);
+  gl.addColorStop(0, 'rgba(255,120,80,0.35)'); gl.addColorStop(1, 'rgba(255,120,80,0)');
+  ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(x, cy, 150, 0, 7); ctx.fill();
+  ctx.globalCompositeOperation = 'source-over';
+  const g = ctx.createLinearGradient(x - 50, cy - 55, x + 50, cy + 55);
+  g.addColorStop(0, c1); g.addColorStop(1, c2);
+  ctx.fillStyle = g;
+  ctx.beginPath();
+  ctx.moveTo(x - 28, cy - 55); ctx.lineTo(x + 28, cy - 55); ctx.lineTo(x + 52, cy);
+  ctx.lineTo(x + 28, cy + 55); ctx.lineTo(x - 28, cy + 55); ctx.lineTo(x - 52, cy); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = '#F6C453'; ctx.lineWidth = 3; ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(x - 52, cy); ctx.lineTo(x + 52, cy); ctx.moveTo(x, cy - 55); ctx.lineTo(x, cy + 55); ctx.stroke();
+  ctx.fillStyle = 'rgba(255,240,200,0.55)';
+  ctx.beginPath(); ctx.arc(x, cy, 12, 0, 7); ctx.fill();
+  ctx.strokeStyle = '#F6C453'; ctx.lineWidth = 2;
+  for (let i = -2; i <= 2; i++) { ctx.beginPath(); ctx.moveTo(x + i * 8, cy + 55); ctx.lineTo(x + i * 9, cy + 95); ctx.stroke(); }
+  ctx.restore();
+}
+
+function watermark(ctx, col, y = 1048){
+  const s = SITE_URL ? `${HANDLE}  ·  ${SITE_URL}` : HANDLE;
+  txt(ctx, s, S / 2, y, { family: F_SANS, size: 24, weight: '500', fill: col, spacing: 1 });
+}
+
+/* ===== Templates ===== */
+function tDiya(ctx, name){
+  const g = ctx.createRadialGradient(540, 560, 40, 540, 560, 820);
+  g.addColorStop(0, '#5E1020'); g.addColorStop(0.6, '#2E0610'); g.addColorStop(1, '#130206');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, S, S);
+  bokeh(ctx, 7, 42, '255,180,80', 0.22);
+  mandala(ctx, 540, 545, 215, 'rgba(246,196,83,0.18)', 2);
+  drawDiya(ctx, 540, 610, 1.1);
+  [[120, 130, 14], [960, 170, 11], [150, 900, 9], [940, 860, 13], [880, 420, 7], [200, 470, 8]].forEach(([x, y, r]) => sparkle(ctx, x, y, r, '#FFE3A0'));
+  txt(ctx, 'शुभ दीपावली', 540, 200, { family: F_DEV, size: 116, fill: 'gold', glow: 'rgba(255,170,60,0.55)' });
+  txt(ctx, 'HAPPY DIWALI', 540, 266, { family: F_SANS, size: 36, weight: '500', fill: '#F9DFA6', spacing: 12 });
+  txt(ctx, 'Aapko aur aapke parivar ko', 540, 790, { family: F_SANS, size: 34, fill: '#F3D9B5' });
+  txt(ctx, 'roshni bhari Diwali ki shubhkamnayein', 540, 838, { family: F_SANS, size: 34, fill: '#F3D9B5' });
+  txt(ctx, name, 540, 960, { family: F_DEV, size: 96, fill: 'gold', maxW: 860, glow: 'rgba(255,170,60,0.45)' });
+  watermark(ctx, 'rgba(251,235,211,0.6)');
+}
+
+function tRangoli(ctx, name){
+  const pal = ['#E8336D', '#FF8A1F', '#17A398', '#7B3FA0', '#FFD23F'];
+  const g = ctx.createRadialGradient(540, 540, 60, 540, 540, 760);
+  g.addColorStop(0, '#FFF9EE'); g.addColorStop(1, '#F4DDB4');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, S, S);
+  rangoli(ctx, 0, 0, 230, pal); rangoli(ctx, S, 0, 230, pal);
+  rangoli(ctx, 0, S, 230, pal); rangoli(ctx, S, S, 230, pal);
+  rangoli(ctx, 540, 190, 88, pal);
+  for (let x = 280; x <= 800; x += 26) {
+    ctx.fillStyle = pal[(x / 26 | 0) % 4];
+    ctx.beginPath(); ctx.arc(x, 44, 5, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(x, S - 44, 5, 0, 7); ctx.fill();
+  }
+  txt(ctx, 'शुभ दीपावली', 540, 420, { family: F_DEV, size: 120, fill: '#8A1538' });
+  txt(ctx, 'HAPPY DIWALI', 540, 488, { family: F_SANS, size: 38, weight: '600', fill: '#D9531E', spacing: 10 });
+  drawDiya(ctx, 540, 640, 0.6, 0.7);
+  txt(ctx, 'Diyon ki roshni aapki zindagi roshan kare', 540, 770, { family: F_SANS, size: 34, fill: '#6B3A2A', maxW: 760 });
+  txt(ctx, name, 540, 890, { family: F_DEV, size: 92, fill: '#8A1538', maxW: 620 });
+  watermark(ctx, 'rgba(110,40,30,0.7)', 1000);
+}
+
+function tGold(ctx, name){
+  const g = ctx.createRadialGradient(540, 500, 40, 540, 540, 780);
+  g.addColorStop(0, '#221A12'); g.addColorStop(1, '#09090B');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, S, S);
+  bokeh(ctx, 21, 26, '246,196,83', 0.14);
+  const bg = ctx.createLinearGradient(0, 0, S, S);
+  bg.addColorStop(0, '#FFE9A8'); bg.addColorStop(0.5, '#C8871E'); bg.addColorStop(1, '#FFE9A8');
+  ctx.strokeStyle = bg; ctx.lineWidth = 4; ctx.strokeRect(48, 48, S - 96, S - 96);
+  ctx.lineWidth = 1.5; ctx.strokeRect(64, 64, S - 128, S - 128);
+  [[64, 64], [S - 64, 64], [64, S - 64], [S - 64, S - 64]].forEach(([x, y]) => {
+    ctx.save(); ctx.translate(x, y); ctx.rotate(Math.PI / 4); ctx.fillStyle = '#F6C453'; ctx.fillRect(-9, -9, 18, 18); ctx.restore();
+  });
+  txt(ctx, 'HAPPY', 540, 300, { family: F_SERIF, size: 52, weight: '600', fill: 'gold', spacing: 26 });
+  txt(ctx, 'DIWALI', 540, 452, { family: F_SERIF, size: 150, weight: '700', fill: 'gold', spacing: 10, glow: 'rgba(246,196,83,0.35)' });
+  ctx.save(); ctx.strokeStyle = '#C8971E'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(330, 512); ctx.lineTo(505, 512); ctx.moveTo(575, 512); ctx.lineTo(750, 512); ctx.stroke(); ctx.restore();
+  sparkle(ctx, 540, 512, 16, '#FFE3A0');
+  txt(ctx, 'शुभ दीपावली', 540, 592, { family: F_DEV, size: 50, fill: '#E9D3A0' });
+  const dev = /[ऀ-ॿ]/.test(name); // Hindi names are taller, so use a smaller size
+  txt(ctx, name, 540, dev ? 760 : 770, { family: dev ? F_DEV : F_SCRIPT, size: dev ? 96 : 132, fill: 'gold', maxW: 820, glow: 'rgba(246,196,83,0.3)' });
+  txt(ctx, 'wishes you light, love & prosperity', 540, 846, { family: F_SANS, size: 30, fill: '#CDBB93', spacing: 2 });
+  drawDiya(ctx, 540, 935, 0.32, 0.8);
+  watermark(ctx, 'rgba(233,211,160,0.6)', 1004);
+}
+
+function tParivar(ctx, name){
+  const g = ctx.createLinearGradient(0, 0, 0, S);
+  g.addColorStop(0, '#170A36'); g.addColorStop(0.55, '#3A0F4D'); g.addColorStop(1, '#5A1430');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, S, S);
+  const r = rng(99);
+  ctx.fillStyle = 'rgba(255,255,255,0.8)';
+  for (let i = 0; i < 70; i++) { ctx.globalAlpha = 0.25 + r() * 0.6; ctx.beginPath(); ctx.arc(r() * S, 90 + r() * 500, r() * 2.2 + 0.4, 0, 7); ctx.fill(); }
+  ctx.globalAlpha = 1;
+  kandil(ctx, 165, 60, 120, '#FF4E6A', '#B3123F');
+  kandil(ctx, 915, 60, 150, '#FF9A2E', '#C2410C');
+  toran(ctx);
+  txt(ctx, 'शुभ दीपावली', 540, 430, { family: F_DEV, size: 110, fill: 'gold', glow: 'rgba(255,170,60,0.5)', maxW: 600 });
+  txt(ctx, 'Diwali ki hardik shubhkamnayein', 540, 500, { family: F_SANS, size: 36, fill: '#F7D9E6' });
+  txt(ctx, name, 540, 650, { family: F_DEV, size: 100, fill: 'gold', maxW: 820, glow: 'rgba(255,170,60,0.4)' });
+  txt(ctx, 'aur parivar ki taraf se', 540, 722, { family: F_SANS, size: 38, weight: '500', fill: '#FFD9A0' });
+  const fl = ctx.createLinearGradient(0, 860, 0, S);
+  fl.addColorStop(0, 'rgba(255,140,40,0)'); fl.addColorStop(1, 'rgba(255,140,40,0.18)');
+  ctx.fillStyle = fl; ctx.fillRect(0, 860, S, S - 860);
+  [180, 360, 540, 720, 900].forEach((x, i) => drawDiya(ctx, x, 900 + (i === 2 ? 0 : 8), i === 2 ? 0.5 : 0.4, 0.75));
+  watermark(ctx, 'rgba(255,230,240,0.6)');
+}
+
+const TEMPLATES = [
+  { name: 'Diya', draw: tDiya },
+  { name: 'Rangoli', draw: tRangoli },
+  { name: 'Gold', draw: tGold },
+  { name: 'Parivar', draw: tParivar },
+];
+
+/* ===== App ===== */
+const $ = s => document.querySelector(s);
+const nameEl = $('#name'), previewEl = $('#preview');
+const main = document.createElement('canvas'); main.width = main.height = S;
+const work = document.createElement('canvas'); work.width = work.height = S;
+let sel = 0, blob = null, timer = null, ticket = 0;
+
+const ua = navigator.userAgent;
+const inApp = /Instagram|FBAN|FBAV|FB_IAB|Snapchat|Line\//i.test(ua);
+const isAndroid = /Android/i.test(ua);
+const isIOS = /iPhone|iPad|iPod/i.test(ua);
+// Instagram's in-app browser blocks downloads and the long-press "Save image" menu,
+// so inside it we send people to the real browser, where download/share work normally.
+const extUrl = isAndroid
+  ? `intent://${location.host}${location.pathname}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(location.href)};end`
+  : isIOS ? `x-safari-https://${location.host}${location.pathname}` : location.href;
+
+function currentName(){ return nameEl.value.trim().replace(/\s+/g, ' ').slice(0, 32) || 'Aapka Naam'; }
+function hasName(){ return nameEl.value.trim().length > 0; }
+
+function drawTo(canvas, idx, name){
+  const ctx = canvas.getContext('2d');
+  ctx.save(); ctx.clearRect(0, 0, S, S);
+  TEMPLATES[idx].draw(ctx, name);
+  ctx.restore();
+}
+
+const thumbs = TEMPLATES.map((t, i) => {
+  const b = document.createElement('button');
+  b.className = 'thumb'; b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', i === sel);
+  const c = document.createElement('canvas'); c.width = c.height = 240;
+  const s = document.createElement('span'); s.textContent = t.name;
+  b.append(c, s);
+  b.onclick = () => {
+    sel = i;
+    document.querySelectorAll('.thumb').forEach((x, j) => x.setAttribute('aria-checked', j === i));
+    render(false);
+  };
+  $('#thumbs').append(b);
+  return c;
+});
+
+async function render(withThumbs = true){
+  const my = ++ticket;
+  const name = currentName();
+  await fontsFor(name);
+  if (my !== ticket) return;
+  drawTo(main, sel, name);
+  previewEl.src = main.toDataURL('image/png');
+  main.toBlob(b => { if (my === ticket) blob = b; }, 'image/png');
+  if (withThumbs) thumbs.forEach((tc, i) => {
+    drawTo(work, i, name);
+    const c = tc.getContext('2d');
+    c.clearRect(0, 0, tc.width, tc.height);
+    c.drawImage(work, 0, 0, tc.width, tc.height);
+  });
+}
+
+nameEl.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(render, 180); });
+nameEl.addEventListener('keydown', e => { if (e.key === 'Enter') nameEl.blur(); });
+
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), 2600);
+}
+function nudge(){
+  const f = $('#field'); f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
+  nameEl.focus(); toast('Pehle apna naam likho ✍️');
+}
+function fileName(){
+  const n = nameEl.value.trim().replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '').slice(0, 30) || 'card';
+  return `diwali-${n}.png`;
+}
+function showHint(){
+  const h = $('#hint');
+  h.classList.add('show'); h.classList.remove('pulse'); void h.offsetWidth; h.classList.add('pulse');
+  h.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  toast(isIOS ? 'Upar ••• dabao → Open in external browser' : 'Upar ⋮ dabao → Open in Chrome');
+}
+function openExternal(){
+  location.href = extUrl;
+  setTimeout(showHint, 1200); // if the app blocked the jump, show the manual steps
+}
+
+function download(){
+  if (!hasName()) return nudge();
+  if (inApp) return openExternal();
+  const a = document.createElement('a');
+  a.href = previewEl.src; a.download = fileName();
+  document.body.appendChild(a); a.click(); a.remove();
+  toast('Card save ho gaya 🪔');
+}
+
+async function share(){
+  if (!hasName()) return nudge();
+  if (!blob) return toast('Ek second… card ban raha hai');
+  const file = new File([blob], fileName(), { type: 'image/png' });
+  const text = SITE_URL ? `Happy Diwali 🪔 Apna card yahan banao: https://${SITE_URL}` : 'Happy Diwali 🪔';
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    try { await navigator.share({ files: [file], text }); }
+    catch (e) { if (e.name !== 'AbortError') fallbackShare(); }
+  } else fallbackShare();
+}
+function fallbackShare(){
+  if (inApp) return openExternal();
+  download();
+  toast('Card save ho gaya, ab WhatsApp pe bhej do 📲');
+}
+
+$('#dl').onclick = download;
+$('#share').onclick = share;
+
+if (inApp) {
+  const browser = isAndroid ? 'Chrome' : isIOS ? 'Safari' : 'Browser';
+  $('#hint').classList.add('show');
+  $('#hintBrowser').textContent = browser;
+  const a = $('#openExt');
+  a.href = extUrl;
+  a.textContent = `${browser} mein kholo ↗`;
+  $('#hintManual').innerHTML = isIOS
+    ? 'Na khule to: upar <b>•••</b> dabao → <b>Open in external browser</b>.'
+    : 'Na khule to: upar <b>⋮</b> dabao → <b>Open in Chrome</b>.';
+}
+
+fontsFor('शुभ दीपावली HAPPY DIWALI Aapka Naam').then(() => render());
+render();
+</script>
+</body>
+</html>
