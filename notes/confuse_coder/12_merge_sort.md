@@ -1,5 +1,5 @@
 # 1 crore numbers: 14 ghante vs 1 second? (Merge Sort, Divide & Conquer): Notes
-*@confuse_coder · Recursion EP 12 · Comment "NOTES" → ye notes + Leaderboard Merge project + practice questions DM mein*
+*@confuse__coder · Recursion EP 12 · Comment "NOTES" → ye notes + Leaderboard Merge project + practice questions DM mein*
 
 ---
 

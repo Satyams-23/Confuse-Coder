@@ -1,5 +1,5 @@
 # Duniya ka sabse mushkil Sudoku = 1 second? (Sudoku Solver, Backtracking): Notes
-*@confuse_coder · Recursion EP 11 · Comment "NOTES" → ye notes + Timetable starter project + practice questions DM mein*
+*@confuse__coder · Recursion EP 11 · Comment "NOTES" → ye notes + Timetable starter project + practice questions DM mein*
 
 ---
 
@@ -110,4 +110,4 @@ Starter project (DM mein): input, table printing aur tests ready hain. Tumhe sir
 ---
 
 **One-line:** Khaali khaana pakdo, 1–9 mein se safe number rakho, aage jao; true aaya toh ruk jao, fail hua toh mitao.
-Follow karo @confuse_coder 🧩
+Follow karo @confuse__coder 🧩

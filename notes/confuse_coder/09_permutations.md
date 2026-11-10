@@ -1,5 +1,5 @@
 # 3 dost, 1 photo = kitne pose? (Permutations): Notes
-*@confuse_coder · Recursion EP 09 · Comment "NOTES" → ye notes DM mein*
+*@confuse__coder · Recursion EP 09 · Comment "NOTES" → ye notes DM mein*
 
 ---
 
@@ -87,4 +87,4 @@ Rule same as EP 08: choice karo → explore karo → **choice undo karo**.
 ---
 
 **One-line:** Har seat pe ek sawaal: kaun baithega? Jo free hai usse bithao, aage jao, phir wapas uthao.
-Next episode: **N-Queens**, jab kuch raaste pehle se band hon. Follow karo @confuse_coder 🔁
+Next episode: **N-Queens**, jab kuch raaste pehle se band hon. Follow karo @confuse__coder 🔁

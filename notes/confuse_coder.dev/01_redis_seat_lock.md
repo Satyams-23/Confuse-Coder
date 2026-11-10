@@ -72,4 +72,4 @@ await redis.del(`seat:${showId}:${seat}`);
 > **`SET key value NX EX 600` = "agar seat free hai to 10 min ke liye meri, warna busy"**, aur TTL ensure karta hai ki koi seat hamesha ke liye atke nahi.
 
 ---
-Aisi aur tech ki kahaniyan → follow **@confuse_coder.dev**
+Aisi aur tech ki kahaniyan → follow **@confuse__coder.dev**

@@ -1,5 +1,5 @@
 # Memo bhi crash ho gaya? (Tabulation): Notes
-*@confuse_coder · Recursion EP 07 · Comment "NOTES" → ye notes DM mein*
+*@confuse__coder · Recursion EP 07 · Comment "NOTES" → ye notes DM mein*
 
 ---
 
@@ -81,4 +81,4 @@ long long fib(int n) {
 ---
 
 **One-line:** Upar se tod ke mat jao, neeche se banao: table + loop = no recursion, no crash.
-Next episode: **Take ya Skip**, recursion ka sabse powerful pattern (subsets). Follow karo @confuse_coder 🔁
+Next episode: **Take ya Skip**, recursion ka sabse powerful pattern (subsets). Follow karo @confuse__coder 🔁

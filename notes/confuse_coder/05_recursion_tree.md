@@ -1,5 +1,5 @@
 # fib(50) ne laptop hang kyun kar diya? (Recursion Tree): Notes
-*@confuse_coder · Recursion EP 05 · Comment "NOTES" → ye notes DM mein*
+*@confuse__coder · Recursion EP 05 · Comment "NOTES" → ye notes DM mein*
 
 ---
 
@@ -84,4 +84,4 @@ Note: `fib(50)` int mein fit nahi hota, isliye `long long` lagaya hai.
 ---
 
 **One-line:** Recursion slow nahi hai. Same kaam baar baar karna slow hai.
-Next episode: **Memoization**, jahan function ek diary rakhta hai. Follow karo @confuse_coder 🔁
+Next episode: **Memoization**, jahan function ek diary rakhta hai. Follow karo @confuse__coder 🔁

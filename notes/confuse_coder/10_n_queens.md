@@ -1,5 +1,5 @@
 # 4 Queens, 1 board = kitne tareeke? (N-Queens, Backtracking): Notes
-*@confuse_coder · Recursion EP 10 · Comment "NOTES" → ye notes DM mein*
+*@confuse__coder · Recursion EP 10 · Comment "NOTES" → ye notes DM mein*
 
 ---
 
@@ -99,4 +99,4 @@ Queen rakho → teeno `true`; uthao → teeno `false`. Ab check = 3 array lookup
 ---
 
 **One-line:** Har row mein queen rakho, sirf jahan safe ho. Raasta band? Ek kadam peechhe, agla column.
-Next episode: **Sudoku Solver**, same trick 9×9 pe. Follow karo @confuse_coder ♛
+Next episode: **Sudoku Solver**, same trick 9×9 pe. Follow karo @confuse__coder ♛

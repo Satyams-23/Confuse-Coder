@@ -1,5 +1,5 @@
 # 4000 crore calls → sirf 99 (Memoization): Notes
-*@confuse_coder · Recursion EP 06 · Comment "NOTES" → ye notes DM mein*
+*@confuse__coder · Recursion EP 06 · Comment "NOTES" → ye notes DM mein*
 
 ---
 
@@ -83,4 +83,4 @@ Ye classic **time vs space trade-off** hai: thodi memory do, bahut saara time ba
 ---
 
 **One-line:** Same kaam do baar mat karo. Ek baar karo, likh lo, agli baar padh lo.
-Next episode: **Tabulation**, bina recursion ke same jaadu. Follow karo @confuse_coder 🔁
+Next episode: **Tabulation**, bina recursion ke same jaadu. Follow karo @confuse__coder 🔁

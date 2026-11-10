@@ -1,5 +1,5 @@
 # 3 toppings = kitne pizza? (Take / Skip, Subsets): Notes
-*@confuse_coder · Recursion EP 08 · Comment "NOTES" → ye notes DM mein*
+*@confuse__coder · Recursion EP 08 · Comment "NOTES" → ye notes DM mein*
 
 ---
 
@@ -75,4 +75,4 @@ Chahiye `{C}`, milega `{C,O}`. Isko hi **backtracking** kehte hain: choice karo 
 ---
 
 **One-line:** Har item pe ek sawaal, lo ya chhodo. Lo toh daalo aur aage jao, chhodo toh nikaalo aur aage jao.
-Next episode: **Permutations**, jab order bhi matter kare. Follow karo @confuse_coder 🔁
+Next episode: **Permutations**, jab order bhi matter kare. Follow karo @confuse__coder 🔁

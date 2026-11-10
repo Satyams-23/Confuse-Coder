@@ -1,5 +1,5 @@
 # VPN asal mein kaise kaam karta hai? — Notes
-*@confuse_coder.dev · Reel 02 · Comment "VPN" → ye notes DM mein*
+*@confuse__coder.dev · Reel 02 · Comment "VPN" → ye notes DM mein*
 
 ---
 
@@ -90,4 +90,4 @@ AllowedIPs = 0.0.0.0/0, ::/0          # saara traffic tunnel se
 ## 7. One-line summary
 **VPN tumhe gayab nahi karta, bas bharosa ISP se VPN company pe shift karta hai.** Public WiFi pe kaam ka hai; company soch-samajh ke chuno.
 
-Follow **@confuse_coder.dev**: repos, AI tools, how tech works.
+Follow **@confuse__coder.dev**: repos, AI tools, how tech works.
