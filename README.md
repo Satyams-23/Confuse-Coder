@@ -19,4 +19,5 @@ Learn by building. Every project includes source code and instructions to help y
 
 Follow along, explore the code, and build something yourself!
 
-**Instagram:** [@confuse_coder.dev](https://www.instagram.com/confuse_coder.dev/)
+**Instagram:** [@confuse_coder.dev](https://www.instagram.com/confuse__coder.dev/)
+**Instagram:** [@confuse_coder.dev](https://www.instagram.com/confuse__coder/)
