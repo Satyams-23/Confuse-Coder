@@ -4,6 +4,8 @@ import { motion, useInView, animate } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTheme } from "./ThemeProvider";
 import type { Note, Project } from "@/lib/content";
+import Link from "next/link";
+import { YOUTUBE } from "@/lib/links";
 
 const reveal = {
   initial: { opacity: 0, y: 30 },
@@ -142,11 +144,13 @@ export function NotesBento({ notes }: { notes: Note[] }) {
                 <span className="pill">{n.account === "confuse_coder.dev" ? ".dev" : "DSA"}</span>
                 <span>EP {String(n.ep).padStart(2, "0")}</span>
               </div>
-              <h3 className="note-title">{n.title}</h3>
+              <h3 className="note-title">
+                <Link href={`/notes/${n.account === "confuse_coder.dev" ? "dev" : "dsa"}/${n.slug}`}>{n.title}</Link>
+              </h3>
               <p className="note-ex">{n.excerpt}</p>
               <div className="note-foot mono">
                 <span>comment “{n.keyword}”</span>
-                <span className="soon">full page soon →</span>
+                <span className="soon">poore notes padho →</span>
               </div>
             </motion.article>
           ))}
@@ -175,6 +179,7 @@ export function NotesBento({ notes }: { notes: Note[] }) {
         .pill{padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--fg)}
         .is-dev .pill{color:var(--accent-2);border-color:currentColor}
         [data-theme=dev] .pill{background:#111;color:#fff!important;border-radius:5px}
+        .note-title a{color:inherit;text-decoration:none}.note-title a::after{content:"";position:absolute;inset:0}
         .note-title{font-size:20px;line-height:1.2;margin:0;font-weight:700;letter-spacing:-.01em}
         .note.big .note-title{font-family:var(--font-display);font-weight:var(--display-weight);font-size:clamp(28px,3.2vw,44px);letter-spacing:var(--display-track);line-height:1}
         .note-ex{margin:0;color:var(--muted);font-size:14px;line-height:1.55;flex:1}
@@ -440,6 +445,9 @@ export function Cta() {
           <a className="btn btn-primary alt" href="https://instagram.com/confuse__coder.dev" target="_blank" rel="noreferrer">
             @confuse__coder.dev <span className="arrow">↗</span>
           </a>
+          <a className="btn btn-primary yt" href={YOUTUBE} target="_blank" rel="noreferrer">
+            YouTube <span className="arrow">↗</span>
+          </a>
         </div>
       </motion.div>
       <style>{`
@@ -457,6 +465,7 @@ export function Cta() {
         .cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:30px;position:relative}
         [data-theme=dev] .btn-primary.alt{background:var(--accent-2)}
         [data-theme=dev] .cta .btn-primary{background:#fff}
+        [data-theme=dev] .cta .btn-primary.yt{background:var(--accent-3)}
       `}</style>
     </section>
   );
@@ -474,9 +483,9 @@ export function Footer() {
         </div>
         <div>
           <h4>Explore</h4>
-          <a href="#notes">Notes</a>
-          <a href="#playground">Playground</a>
-          <a href="#projects">Projects</a>
+          <Link href="/#notes">Notes</Link>
+          <Link href="/#playground">Playground</Link>
+          <Link href="/#projects">Projects</Link>
         </div>
         <div>
           <h4>Instagram</h4>
@@ -485,6 +494,12 @@ export function Footer() {
           </a>
           <a href="https://instagram.com/confuse__coder.dev" target="_blank" rel="noreferrer">
             @confuse__coder.dev
+          </a>
+        </div>
+        <div>
+          <h4>YouTube</h4>
+          <a href={YOUTUBE} target="_blank" rel="noreferrer">
+            @ConfuseCoder23
           </a>
         </div>
       </div>
@@ -497,7 +512,7 @@ export function Footer() {
       </div>
       <style>{`
         .foot{border-top:var(--bw) solid var(--line);padding-top:70px;overflow:hidden}
-        .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+        .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
         .foot-brand{font-weight:700;font-size:22px}
         .foot-small{color:var(--muted);font-size:12.5px;margin-top:10px}
         .foot h4{font-size:13px;color:var(--muted);font-weight:500;margin:0 0 14px}

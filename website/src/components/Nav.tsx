@@ -1,22 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTheme, type Theme } from "./ThemeProvider";
 
 const LINKS = [
-  { href: "#notes", label: "Notes" },
-  { href: "#playground", label: "Playground" },
-  { href: "#game", label: "Game" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#notes", label: "Notes" },
+  { href: "/#playground", label: "Playground" },
+  { href: "/#game", label: "Game" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function AccountSwitch({ compact = false }: { compact?: boolean }) {
   const { theme, switchTo } = useTheme();
-  const opts: { id: Theme; label: string }[] = [
-    { id: "cc", label: compact ? "DSA" : "confuse__coder" },
-    { id: "dev", label: compact ? ".dev" : ".dev" },
+  const opts: { id: Theme; label: string; logo: string }[] = [
+    { id: "cc", label: compact ? "DSA" : "confuse__coder", logo: "/brand/cc.jpg" },
+    { id: "dev", label: ".dev", logo: "/brand/dev-logo.svg" },
   ];
   return (
     <div className="switch" role="radiogroup" aria-label="Choose account">
@@ -28,6 +29,7 @@ export function AccountSwitch({ compact = false }: { compact?: boolean }) {
           className={theme === o.id ? "on" : ""}
           onClick={(e) => switchTo(o.id, { x: e.clientX, y: e.clientY })}
         >
+          <Image src={o.logo} alt="" width={18} height={18} className={`sw-logo sw-${o.id}`} />
           {o.label}
         </button>
       ))}
@@ -47,12 +49,12 @@ export function Nav() {
 
   return (
     <header className={`nav ${scrolled ? "scrolled" : ""}`}>
-      <a href="#top" className="nav-logo" aria-label="Confuse Coder home">
+      <Link href="/" className="nav-logo" aria-label="Confuse Coder home">
         <Image src={theme === "dev" ? "/brand/dev-logo.svg" : "/brand/cc.jpg"} alt="" width={30} height={30} />
         <span>
           Confuse Coder<b className="only-dev">.dev</b>
         </span>
-      </a>
+      </Link>
       <nav className="nav-links">
         {LINKS.map((l) => (
           <a key={l.href} href={l.href}>
@@ -78,10 +80,11 @@ export function Nav() {
         [data-theme=dev] .nav-links a:hover{background:var(--accent)}
         .switch{display:flex;padding:3px;border-radius:999px;background:var(--card);border:var(--bw) solid var(--line);margin-left:6px}
         [data-theme=dev] .switch{border-radius:10px;border-width:2px;background:var(--bg)}
-        .switch button{all:unset;cursor:pointer;padding:7px 12px;border-radius:999px;font:600 12px/1 var(--font-mono);color:var(--muted);transition:background .25s,color .25s;white-space:nowrap}
+        .switch button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 6px;border-radius:999px;font:600 12px/1 var(--font-mono);color:var(--muted);transition:background .25s,color .25s;white-space:nowrap}
         .switch button.on{background:var(--accent);color:var(--on-accent)}
         [data-theme=dev] .switch button{border-radius:7px;color:#111}
         [data-theme=dev] .switch button.on{background:#111;color:var(--accent)}
+        .sw-logo{flex:none;object-fit:cover}.sw-cc{border-radius:50%}.sw-dev{border-radius:4px;outline:1.5px solid #111}
         .switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
         @media (max-width:820px){.nav-links{display:none}.nav{width:calc(100% - 24px);justify-content:space-between}}
       `}</style>

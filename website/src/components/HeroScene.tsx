@@ -208,7 +208,7 @@ function Logo({ clear, theme }: { clear: boolean; theme: Theme }) {
   useFrame((state, dt) => {
     t.current += ((clear ? 1 : 0) - t.current) * Math.min(1, dt * 2.8);
     const { x, y } = state.pointer;
-    const baseZ = theme === "dev" ? -0.1 : 0; // .dev logo is drawn tilted ~6°
+    const baseZ = theme === "dev" ? 0.1 : 0; // .dev logo card is tilted ~6° anticlockwise (top edge rises to the right)
     group.current.rotation.y += (x * 0.45 - group.current.rotation.y) * 0.05;
     group.current.rotation.x += (-y * 0.3 - group.current.rotation.x) * 0.05;
     group.current.rotation.z += (baseZ - group.current.rotation.z) * 0.05;

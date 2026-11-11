@@ -116,3 +116,21 @@ export function getStats() {
     projects: getProjects().length,
   };
 }
+
+// URL segment for each account: /notes/dsa/12_merge_sort, /notes/dev/02_vpn
+export const ACCOUNT_SEG: Record<Account, "dsa" | "dev"> = { confuse_coder: "dsa", "confuse_coder.dev": "dev" };
+export const SEG_ACCOUNT: Record<string, Account> = { dsa: "confuse_coder", dev: "confuse_coder.dev" };
+
+export function noteHref(n: Pick<Note, "account" | "slug">): string {
+  return `/notes/${ACCOUNT_SEG[n.account]}/${n.slug}`;
+}
+
+/** Full markdown of one notes file, or null if it doesn't exist. */
+export function getNote(seg: string, slug: string): (Note & { markdown: string }) | null {
+  const account = SEG_ACCOUNT[seg];
+  if (!account || !/^[\w.-]+$/.test(slug)) return null;
+  const note = getNotes().find((n) => n.account === account && n.slug === slug);
+  if (!note) return null;
+  const markdown = fs.readFileSync(path.join(REEL_ROOT, "notes", account, `${slug}.md`), "utf8");
+  return { ...note, markdown };
+}
