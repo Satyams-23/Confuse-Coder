@@ -5,6 +5,9 @@ Reel mein dekha: queue = lehar (BFS), stack = ek raaste mein gehra (DFS).
 Ab khud dekho! Ek **browser game** jisme same maze pe BFS aur DFS ki race hoti hai, aur tum khud BFS ko harane ki koshish karte ho.
 Tumhara kaam sirf ek function: **`bfs()`**. Baaki sab (maze, animation, game, DFS) ready hai.
 
+🎮 **Abhi khelo (kuch download nahi, phone pe bhi):** [Maze Race live](https://satyams-23.github.io/Confuse-Coder/Project/08_maze_race/web/?solution#2026-15)  
+(Reel wala maze: #2026. `?solution` hata do toh tumhara `starter.js` chalega, woh download karke.)
+
 ---
 
 ## Kya milega
