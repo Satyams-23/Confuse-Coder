@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maze Race · BFS vs DFS</title>
+<style>
+  :root {
+    --bg: #07080c; --panel: #10121a; --line: #23263a; --text: #f2f3f7; --dim: #8b90a8;
+    --amber: #ffb547; --cyan: #5ce1ff; --red: #ff4d6d; --green: #4bf2a7; --path: #ffe14d;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  body { min-height: 100vh; padding: 18px 16px 40px; }
+  header { max-width: 1040px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+  h1 { margin: 0; font-size: clamp(22px, 4vw, 32px); letter-spacing: .02em; }
+  h1 .b { color: var(--cyan); } h1 .d { color: var(--red); }
+  .tag { font: 600 13px ui-monospace, Consolas, monospace; color: var(--dim); }
+  .tag a { color: var(--amber); }
+  .bar { max-width: 1040px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 10px; }
+  button, select { font: 700 14px system-ui, sans-serif; color: var(--text); background: #1a1d2b; border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; cursor: pointer; }
+  button:hover { border-color: var(--amber); }
+  button.on { background: var(--amber); color: #111; border-color: var(--amber); }
+  button.go { background: var(--cyan); color: #04202a; border-color: var(--cyan); }
+  label { font: 600 13px system-ui; color: var(--dim); display: flex; align-items: center; gap: 6px; }
+  .seed { margin-left: auto; font: 700 14px ui-monospace, Consolas, monospace; color: var(--amber); }
+  .boards { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 720px) { .boards { grid-template-columns: 1fr; } .seed { margin-left: 0; } }
+  .board { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 12px; position: relative; }
+  .board h2 { margin: 0 0 8px; font-size: 17px; display: flex; justify-content: space-between; align-items: baseline; }
+  .board h2 small { font: 600 12px ui-monospace, Consolas, monospace; color: var(--dim); }
+  canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 8px; touch-action: none; background: #000; }
+  .stats { display: flex; gap: 16px; margin-top: 10px; font: 600 14px ui-monospace, Consolas, monospace; color: var(--dim); }
+  .stats b { color: var(--text); font-size: 18px; }
+  .over { position: absolute; inset: 44px 12px 46px; display: none; align-items: center; justify-content: center; text-align: center; padding: 20px; background: rgba(7, 8, 12, .86); border-radius: 8px; font: 700 18px system-ui; line-height: 1.5; }
+  .over code { color: var(--amber); }
+  .verdict { max-width: 1040px; margin: 14px auto 0; min-height: 56px; text-align: center; font-size: clamp(17px, 3vw, 22px); font-weight: 800; padding: 14px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); }
+  .verdict .g { color: var(--green); } .verdict .r { color: var(--red); } .verdict .a { color: var(--amber); }
+  .help { max-width: 1040px; margin: 12px auto 0; color: var(--dim); font-size: 14px; line-height: 1.6; }
+  .help b { color: var(--text); }
+</style>
+<script>
+  // ?solution lagao toh solution.js chalega, warna tumhara starter.js
+  window.USING = new URLSearchParams(location.search).has('solution') ? 'solution.js' : 'starter.js';
+  document.write('<script src="core.js"><\/script><script src="' + window.USING + '"><\/script>');
+</script>
+</head>
+<body>
+<header>
+  <h1>MAZE RACE · <span class="b">BFS</span> vs <span class="d">DFS</span></h1>
+  <div class="tag">@confuse__coder · Graphs EP 02 · using <span id="using"></span> · <a id="swap" href="#"></a></div>
+</header>
+
+<div class="bar">
+  <button id="newBtn">🔀 New maze</button>
+  <button id="raceBtn" class="go">▶ Race</button>
+  <button id="playBtn">✍️ Tum vs BFS</button>
+  <button id="editBtn">🧱 Edit walls</button>
+  <label>Speed <input id="speed" type="range" min="1" max="30" value="6" /></label>
+  <label>Size
+    <select id="size">
+      <option value="15">Small</option>
+      <option value="21" selected>Medium</option>
+      <option value="31">Large</option>
+    </select>
+  </label>
+  <span class="seed" id="seed"></span>
+</div>
+
+<div class="boards">
+  <div class="board">
+    <h2><span id="lTitle" style="color:var(--cyan)">BFS · queue</span><small id="lSub">lehar ki tarah</small></h2>
+    <canvas id="left"></canvas>
+    <div class="stats"><span>visited <b id="lVis">0</b></span><span>path <b id="lPath">-</b></span></div>
+    <div class="over" id="lOver"></div>
+  </div>
+  <div class="board">
+    <h2><span id="rTitle" style="color:var(--red)">DFS · stack</span><small id="rSub">ek raasta, gehra</small></h2>
+    <canvas id="right"></canvas>
+    <div class="stats"><span>visited <b id="rVis">0</b></span><span>path <b id="rPath">-</b></span></div>
+    <div class="over" id="rOver"></div>
+  </div>
+</div>
+
+<div class="verdict" id="verdict">▶ Race dabao: dekho kaun shortest raasta dhoondhta hai.</div>
+<div class="help">
+  <b>Race:</b> same maze, BFS (queue) vs DFS (stack). Path = start se end tak kitne steps.
+  <b>Tum vs BFS:</b> left maze pe S se E tak ungli/mouse se raasta banao (peeche khiskao = undo). Phir BFS chalega.
+  <b>Edit walls:</b> left maze pe click/drag karke deewar banao ya hatao. Link share karo, dost ko wahi maze milega.
+</div>
+
+<script src="ui.js"></script>
+</body>
+</html>

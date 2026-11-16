@@ -20,7 +20,7 @@ Confuse Coder runs two channels:
 
 | Channel | Focus |
 |---|---|
-| **@confuse__coder** | Data Structures & Algorithms: recursion, backtracking, dynamic programming, sorting |
+| **@confuse__coder** | Data Structures & Algorithms: recursion, backtracking, dynamic programming, sorting, graphs |
 | **@confuse__coder.dev** | Developer topics: system design, backend engineering, networking, AI tools, full-stack builds |
 
 Each reel is a short explainer. This repository is the companion material: the full written notes behind every episode and projects you can build yourself to practise the concept.
@@ -54,6 +54,12 @@ The projects in [`Project/`](Project/) put each concept into a small real-world 
 |---|---|---|---|
 | 01 | [College Timetable Generator](Project/01_college_timetable/) | Backtracking with pruning | Python, C++ |
 | 02 | [Leaderboard Merge](Project/02_leaderboard_merge/) | Divide and conquer (merge sort) | Python, C++ |
+| 03 | [UPI Change Maker](Project/03_upi_change_maker/) | Backtracking with reuse (combination sum) | Python, C++ |
+| 04 | [Newspaper Word Puzzle Solver](Project/04_word_puzzle_solver/) | Grid DFS with mark / unmark | Python, C++ |
+| 05 | [Auto Fare Learner](Project/05_auto_fare_learner/) | Gradient descent, linear regression | Python |
+| 06 | [Mutual Friends Finder](Project/06_mutual_friends_finder/) | Graph adjacency list, friends of friends | Python, C++ |
+| 07 | [Referral Finder](Project/07_referral_finder/) | BFS distance and shortest path | Python, C++ |
+| 08 | [Maze Race: BFS vs DFS](Project/08_maze_race/) | Grid BFS vs DFS, browser race and game | HTML/JavaScript, Python, C++ |
 | — | [Diwali Card Generator](Project/diwali-site/) | Client-side canvas rendering | HTML, JavaScript |
 
 **How to use a project**

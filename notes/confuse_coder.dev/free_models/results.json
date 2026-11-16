@@ -1,0 +1,308 @@
+[
+ {
+  "model": "baidu/ernie-5.5-flash-preview:free",
+  "task": "merge_intervals",
+  "secs": 2.0,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "baidu/ernie-5.5-flash-preview:free",
+  "out_tokens": 237
+ },
+ {
+  "model": "baidu/ernie-5.5-flash-preview:free",
+  "task": "lru_cache",
+  "secs": 1.3,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "baidu/ernie-5.5-flash-preview:free",
+  "out_tokens": 149
+ },
+ {
+  "model": "thinkingmachines/inkling-2-small:free",
+  "task": "merge_intervals",
+  "secs": 0.5,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 403: {\"error\":{\"message\":\"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps\",\"code\":"
+ },
+ {
+  "model": "thinkingmachines/inkling-2-small:free",
+  "task": "lru_cache",
+  "secs": 0.1,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 403: {\"error\":{\"message\":\"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps\",\"code\":"
+ },
+ {
+  "model": "liquid/lfm-3-1.7b:free",
+  "task": "merge_intervals",
+  "secs": 8.3,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "liquid/lfm-3-1.7b:free",
+  "out_tokens": 1728
+ },
+ {
+  "model": "liquid/lfm-3-1.7b:free",
+  "task": "lru_cache",
+  "secs": 19.5,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "liquid/lfm-3-1.7b:free",
+  "out_tokens": 4168
+ },
+ {
+  "model": "particle-ai/particle-1:free",
+  "task": "merge_intervals",
+  "secs": 2.4,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "particle-ai/particle-1:free",
+  "out_tokens": 231
+ },
+ {
+  "model": "particle-ai/particle-1:free",
+  "task": "lru_cache",
+  "secs": 5.4,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "particle-ai/particle-1:free",
+  "out_tokens": 189
+ },
+ {
+  "model": "recursive/flint-v1.0:free",
+  "task": "merge_intervals",
+  "secs": 4.1,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "recursive/flint-v1.0:free",
+  "out_tokens": 404
+ },
+ {
+  "model": "recursive/flint-v1.0:free",
+  "task": "lru_cache",
+  "secs": 2.2,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "recursive/flint-v1.0:free",
+  "out_tokens": 227
+ },
+ {
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "task": "merge_intervals",
+  "secs": 9.9,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "nvidia/nemotron-3.5-super-vl:free",
+  "out_tokens": 805
+ },
+ {
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "task": "lru_cache",
+  "secs": 5.4,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "nvidia/nemotron-3.5-super-vl:free",
+  "out_tokens": 512
+ },
+ {
+  "model": "dots-studio/dots-3-note-preview:free",
+  "task": "merge_intervals",
+  "secs": 21.6,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "dots-studio/dots-3-note-preview:free",
+  "out_tokens": 1533
+ },
+ {
+  "model": "dots-studio/dots-3-note-preview:free",
+  "task": "lru_cache",
+  "secs": 13.7,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "dots-studio/dots-3-note-preview:free",
+  "out_tokens": 1208
+ },
+ {
+  "model": "nvidia/nemotron-3.5-lightning:free",
+  "task": "merge_intervals",
+  "secs": 122.1,
+  "ok": false,
+  "passed": false,
+  "err": "TimeoutError('The read operation timed out')"
+ },
+ {
+  "model": "nvidia/nemotron-3.5-lightning:free",
+  "task": "lru_cache",
+  "secs": 8.1,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "nvidia/nemotron-3.5-lightning:free",
+  "out_tokens": 870
+ },
+ {
+  "model": "cohere/north-mini-code:free",
+  "task": "merge_intervals",
+  "secs": 6.0,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "cohere/north-mini-code:free",
+  "out_tokens": 2421
+ },
+ {
+  "model": "cohere/north-mini-code:free",
+  "task": "lru_cache",
+  "secs": 5.4,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "cohere/north-mini-code:free",
+  "out_tokens": 1150
+ },
+ {
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "task": "merge_intervals",
+  "secs": 7.8,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "out_tokens": 369
+ },
+ {
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "task": "lru_cache",
+  "secs": 7.0,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "out_tokens": 223
+ },
+ {
+  "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+  "task": "merge_intervals",
+  "secs": 3.1,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+  "out_tokens": 192
+ },
+ {
+  "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+  "task": "lru_cache",
+  "secs": 4.4,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+  "out_tokens": 208
+ },
+ {
+  "model": "google/gemma-4-26b-a4b-it:free",
+  "task": "merge_intervals",
+  "secs": 0.7,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to u"
+ },
+ {
+  "model": "google/gemma-4-26b-a4b-it:free",
+  "task": "lru_cache",
+  "secs": 0.4,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to u"
+ },
+ {
+  "model": "google/gemma-4-31b-it:free",
+  "task": "merge_intervals",
+  "secs": 0.8,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use y"
+ },
+ {
+  "model": "google/gemma-4-31b-it:free",
+  "task": "lru_cache",
+  "secs": 0.4,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use y"
+ },
+ {
+  "model": "google/lyria-3-pro-preview",
+  "task": "merge_intervals",
+  "secs": 28.4,
+  "ok": true,
+  "passed": false,
+  "err": "SyntaxError: unterminated string literal (detected at line 30)",
+  "served_by": "google/lyria-3-pro-preview",
+  "out_tokens": 464
+ },
+ {
+  "model": "google/lyria-3-pro-preview",
+  "task": "lru_cache",
+  "secs": 42.7,
+  "ok": true,
+  "passed": false,
+  "err": "SyntaxError: unterminated string literal (detected at line 8)",
+  "served_by": "google/lyria-3-pro-preview",
+  "out_tokens": 462
+ },
+ {
+  "model": "google/lyria-3-clip-preview",
+  "task": "merge_intervals",
+  "secs": 16.3,
+  "ok": true,
+  "passed": false,
+  "err": "SyntaxError: unterminated string literal (detected at line 7)",
+  "served_by": "google/lyria-3-clip-preview",
+  "out_tokens": 148
+ },
+ {
+  "model": "google/lyria-3-clip-preview",
+  "task": "lru_cache",
+  "secs": 15.5,
+  "ok": true,
+  "passed": false,
+  "err": "SyntaxError: unterminated string literal (detected at line 4)",
+  "served_by": "google/lyria-3-clip-preview",
+  "out_tokens": 131
+ },
+ {
+  "model": "openrouter/free",
+  "task": "merge_intervals",
+  "secs": 26.1,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "dots-studio/dots-3-note-preview:free",
+  "out_tokens": 1940
+ },
+ {
+  "model": "openrouter/free",
+  "task": "lru_cache",
+  "secs": 4.3,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "served_by": "cohere/north-mini-code:free",
+  "out_tokens": 829
+ }
+]

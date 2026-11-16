@@ -1,0 +1,107 @@
+[
+ {
+  "model": "google/gemma-4-31b-it:free",
+  "task": "calculator",
+  "secs": 0.8,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please re"
+ },
+ {
+  "model": "google/gemma-4-26b-a4b-it:free",
+  "task": "calculator",
+  "secs": 0.7,
+  "ok": false,
+  "passed": false,
+  "err": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Pleas"
+ },
+ {
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "task": "calculator",
+  "secs": 1.1,
+  "ok": true,
+  "passed": false,
+  "err": "NameError: name 'calculate' is not defined",
+  "out_tokens": 9
+ },
+ {
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "task": "calculator",
+  "secs": 18.7,
+  "ok": true,
+  "passed": false,
+  "err": "UnboundLocalError: cannot access local variable 'i' where it is not associated with a value",
+  "out_tokens": 3856
+ },
+ {
+  "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+  "task": "calculator",
+  "secs": 477.8,
+  "ok": false,
+  "passed": false,
+  "err": "TimeoutError('The read operation timed out')"
+ },
+ {
+  "model": "nvidia/nemotron-3.5-lightning:free",
+  "task": "calculator",
+  "secs": 109.5,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "out_tokens": 7554
+ },
+ {
+  "model": "cohere/north-mini-code:free",
+  "task": "calculator",
+  "secs": 186.1,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "out_tokens": 63670
+ },
+ {
+  "model": "baidu/ernie-5.5-flash-preview:free",
+  "task": "calculator",
+  "secs": 7.4,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "out_tokens": 1932
+ },
+ {
+  "model": "particle-ai/particle-1:free",
+  "task": "calculator",
+  "secs": 85.2,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "out_tokens": 1097
+ },
+ {
+  "model": "recursive/flint-v1.0:free",
+  "task": "calculator",
+  "secs": 19.7,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "out_tokens": 3525
+ },
+ {
+  "model": "dots-studio/dots-3-note-preview:free",
+  "task": "calculator",
+  "secs": 62.1,
+  "ok": true,
+  "passed": true,
+  "err": "",
+  "out_tokens": 5103
+ },
+ {
+  "model": "liquid/lfm-3-1.7b:free",
+  "task": "calculator",
+  "secs": 49.4,
+  "ok": true,
+  "passed": false,
+  "err": "NameError: name 'calculate' is not defined",
+  "out_tokens": 8192
+ }
+]
