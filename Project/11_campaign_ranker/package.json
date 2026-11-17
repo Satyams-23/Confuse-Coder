@@ -1,0 +1,11 @@
+{
+  "name": "campaign-ranker",
+  "version": "1.0.0",
+  "description": "Real earnings per clipping campaign for YOUR audience: country rules, max payout cap, budget left",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js",
+    "rank": "node rank.js data/campaigns_2026-11-17.json data/audience.json"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,39 @@
+{
+  "source": "contentrewards.com public campaign pages, checked 17 Nov 2026. Rates change daily: re-check before you use them.",
+  "campaigns": [
+    {
+      "name": "GTA 6 Tokyo Girl", "url": "https://contentrewards.com/c/campaigns/40046522-56d9-45ad-9198-faea8eca90c6",
+      "budgetLeft": 1912, "rules": ["song 'Tokyo Girl' by Passive zaroori (music campaign)"],
+      "platforms": {
+        "tiktok":    { "cpm": 0.70, "min": 2, "max": 35 },
+        "instagram": { "cpm": 0.70, "min": 2, "max": 35 }
+      }
+    },
+    {
+      "name": "CoD MW4 DMZ", "url": "https://contentrewards.com/c/campaigns/a1cefc3b-4533-438f-8e70-a7299550f1cf",
+      "budgetLeft": 22163, "rules": ["official DMZ Intel Briefing video se hi clip"],
+      "platforms": {
+        "tiktok":    { "cpm": 2.00, "min": 6, "max": 1200, "countries": { "IN": 0, "PK": 0, "BD": 0, "*": 2.00 } },
+        "instagram": { "cpm": 1.50, "min": 4.5, "max": 1200 }
+      }
+    },
+    {
+      "name": "SEGA Metaphor", "url": "https://contentrewards.com/c/campaigns/b5ff48d7-ec63-443a-b767-3a430a6f71f4",
+      "budgetLeft": 11275, "rules": ["official trailers se hi clip"],
+      "platforms": {
+        "tiktok":    { "cpm": 2.00, "min": 2, "max": 800, "countries": { "IN": 0, "PK": 0, "BD": 0, "*": 2.00 } },
+        "instagram": { "cpm": 1.50, "min": 1.5, "max": 800 },
+        "youtube":   { "cpm": 2.00, "min": 2, "max": 800, "countries": { "IN": 0, "PK": 0, "BD": 0, "*": 2.00 } }
+      }
+    },
+    {
+      "name": "Expedia x IShowSpeed", "url": "https://contentrewards.com/c/campaigns/afeca1a0-f44c-46ad-8194-09d62b56589e",
+      "budgetLeft": 7468, "rules": ["sirf Speed ki 6 Nov wali stream ke clips"],
+      "platforms": {
+        "tiktok":    { "cpm": 1.00, "min": 10, "max": 500 },
+        "instagram": { "cpm": 1.00, "min": 10, "max": 500 },
+        "youtube":   { "cpm": 1.00, "min": 10, "max": 500 }
+      }
+    }
+  ]
+}
