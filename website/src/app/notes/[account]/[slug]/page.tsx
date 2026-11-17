@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { marked } from "marked";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Sections";
-import { ACCOUNT_SEG, getNote, getNotes, noteHref } from "@/lib/content";
+import { ACCOUNT_SEG, epLabel, getNote, getNotes, noteHref } from "@/lib/content";
 import { videoLinks } from "@/lib/links";
 
 export const dynamicParams = false;
@@ -34,7 +34,7 @@ export default async function NotePage({ params }: Params) {
   const handle = isDev ? "@confuse__coder.dev" : "@confuse__coder";
 
   const same = getNotes()
-    .filter((n) => n.account === note.account)
+    .filter((n) => n.account === note.account && n.series === note.series)
     .sort((a, b) => a.ep - b.ep);
   const i = same.findIndex((n) => n.slug === note.slug);
   const prev = same[i - 1];
@@ -47,7 +47,7 @@ export default async function NotePage({ params }: Params) {
         <div className="np-top mono">
           <Link href="/#notes">← saare notes</Link>
           <span className="pill">
-            {isDev ? ".dev" : "DSA"} · EP {String(note.ep).padStart(2, "0")}
+            {isDev ? ".dev" : "DSA"} · {epLabel(note)}
           </span>
         </div>
 
@@ -78,7 +78,7 @@ export default async function NotePage({ params }: Params) {
         <nav className="np-pager mono" aria-label="Other notes">
           {prev ? (
             <Link href={noteHref(prev)} className="card hoverable">
-              <small>← EP {String(prev.ep).padStart(2, "0")}</small>
+              <small>← {epLabel(prev)}</small>
               {prev.title}
             </Link>
           ) : (
@@ -86,7 +86,7 @@ export default async function NotePage({ params }: Params) {
           )}
           {next ? (
             <Link href={noteHref(next)} className="card hoverable right">
-              <small>EP {String(next.ep).padStart(2, "0")} →</small>
+              <small>{epLabel(next)} →</small>
               {next.title}
             </Link>
           ) : (

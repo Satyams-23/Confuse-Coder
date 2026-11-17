@@ -142,7 +142,7 @@ export function NotesBento({ notes }: { notes: Note[] }) {
               )}
               <div className="note-top mono">
                 <span className="pill">{n.account === "confuse_coder.dev" ? ".dev" : "DSA"}</span>
-                <span>EP {String(n.ep).padStart(2, "0")}</span>
+                <span>{n.series ? (n.series === "aiml" ? "AI/ML " : n.series.toUpperCase() + " ") : ""}EP {String(n.ep).padStart(2, "0")}</span>
               </div>
               <h3 className="note-title">
                 <Link href={`/notes/${n.account === "confuse_coder.dev" ? "dev" : "dsa"}/${n.slug}`}>{n.title}</Link>

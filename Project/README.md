@@ -12,6 +12,9 @@ Sirf dekho mat, **banao**. Har project ka boilerplate ready hai; tum sirf woh co
 | 06 | [Mutual Friends Finder](06_mutual_friends_finder/) | Graphs EP 01 · What is a Graph | Adjacency list | Python + C++ |
 | 07 | [Referral Finder](07_referral_finder/) | Graphs EP 02 · BFS | BFS + shortest path | Python + C++ |
 | 08 | [Maze Race · BFS vs DFS](08_maze_race/) | Graphs EP 02 · BFS | Browser race + game 🎮 | Web + Python + C++ |
+| 10 | [Brief Checker](10_brief_checker/) | @confuse__coder.dev · DEV 10 · MrBeast clipping | Rule checks (whole-tag regex, 9:16), CPM earnings | Node.js |
+| 11 | [Campaign Ranker](11_campaign_ranker/) | @confuse__coder.dev · DEV 11 · GTA 6 clipping | Max cap + country + platform earnings, sort | Node.js |
+| 12 | [Mini Clipper](12_mini_clipper/) | @confuse__coder.dev · DEV 12 · free AI clipping tools | Sliding window + top-k no overlap, Whisper + FFmpeg | Python |
 | — | [Diwali Card Generator](diwali-site/) | @confuse__coder.dev | HTML + Canvas | Web |
 
 ## Kaise use karein

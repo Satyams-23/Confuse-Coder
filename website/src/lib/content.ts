@@ -14,7 +14,22 @@ export type Note = {
   title: string;
   excerpt: string;
   keyword: string;
+  /** "" = main season (root folder), else the sub-folder: "graphs", "aiml" */
+  series: string;
+  /** sort key: later seasons first, then episode */
+  order: number;
+  /** path relative to notes/<account>/ */
+  file: string;
 };
+
+/** Season order per sub-folder (root = first season). Newer seasons sort above older ones. */
+const SERIES_RANK: Record<string, number> = { "": 0, graphs: 1, aiml: 1 };
+
+/** "EP 03" or "GRAPHS EP 03" */
+export function epLabel(n: Pick<Note, "ep" | "series">): string {
+  const ep = `EP ${String(n.ep).padStart(2, "0")}`;
+  return n.series ? `${n.series === "aiml" ? "AI/ML" : n.series.toUpperCase()} ${ep}` : ep;
+}
 
 export type Project = {
   slug: string;
@@ -65,24 +80,33 @@ export function getNotes(): Note[] {
   const accounts: Account[] = ["confuse_coder", "confuse_coder.dev"];
   const notes: Note[] = [];
   for (const account of accounts) {
-    const dir = path.join(REEL_ROOT, "notes", account);
-    for (const file of readDir(dir).filter((f) => f.endsWith(".md"))) {
-      const raw = fs.readFileSync(path.join(dir, file), "utf8");
-      const lines = raw.split(/\r?\n/);
-      const h1 = lines.find((l) => l.startsWith("# ")) ?? file;
-      const title = stripMd(h1.replace(/^#\s+/, "").replace(/\s*[:—–-]\s*Notes$/i, ""));
-      const kw = raw.match(/[Cc]omment (?:keyword: )?\**"?([A-Z]{3,})"?/);
-      notes.push({
-        account,
-        slug: file.replace(/\.md$/, ""),
-        ep: parseInt(file, 10) || 0,
-        title,
-        excerpt: firstParagraph(lines),
-        keyword: kw?.[1] ?? "NOTES",
-      });
+    const root = path.join(REEL_ROOT, "notes", account);
+    // root .md files + one level of season sub-folders (graphs/, aiml/); only NN_*.md files
+    const series = ["", ...readDir(root).filter((d) => !d.includes(".") && fs.statSync(path.join(root, d)).isDirectory())];
+    for (const sub of series) {
+      for (const f of readDir(path.join(root, sub)).filter((f) => /^\d+_.*\.md$/.test(f))) {
+        const file = sub ? `${sub}/${f}` : f;
+        const raw = fs.readFileSync(path.join(root, file), "utf8");
+        const lines = raw.split(/\r?\n/);
+        const h1 = lines.find((l) => l.startsWith("# ")) ?? f;
+        const title = stripMd(h1.replace(/^#\s+/, "").replace(/\s*[:—–-]\s*Notes$/i, ""));
+        const kw = raw.match(/[Cc]omment (?:keyword: )?\**"?([A-Z]{3,})"?/);
+        const ep = parseInt(f, 10) || 0;
+        notes.push({
+          account,
+          slug: (sub ? `${sub}-` : "") + f.replace(/\.md$/, ""),
+          ep,
+          title,
+          excerpt: firstParagraph(lines),
+          keyword: kw?.[1] ?? "NOTES",
+          series: sub,
+          order: (SERIES_RANK[sub] ?? 1) * 1000 + ep,
+          file,
+        });
+      }
     }
   }
-  return notes.sort((a, b) => b.ep - a.ep);
+  return notes.sort((a, b) => b.order - a.order);
 }
 
 // Public repo keeps viewer projects in Project/, the local reel folder in viewer-projects/.
@@ -131,6 +155,6 @@ export function getNote(seg: string, slug: string): (Note & { markdown: string }
   if (!account || !/^[\w.-]+$/.test(slug)) return null;
   const note = getNotes().find((n) => n.account === account && n.slug === slug);
   if (!note) return null;
-  const markdown = fs.readFileSync(path.join(REEL_ROOT, "notes", account, `${slug}.md`), "utf8");
+  const markdown = fs.readFileSync(path.join(REEL_ROOT, "notes", account, note.file), "utf8");
   return { ...note, markdown };
 }

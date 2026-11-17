@@ -60,6 +60,9 @@ The projects in [`Project/`](Project/) put each concept into a small real-world 
 | 06 | [Mutual Friends Finder](Project/06_mutual_friends_finder/) | Graph adjacency list, friends of friends | Python, C++ |
 | 07 | [Referral Finder](Project/07_referral_finder/) | BFS distance and shortest path | Python, C++ |
 | 08 | [Maze Race: BFS vs DFS](Project/08_maze_race/) | Grid BFS vs DFS, browser race and game | HTML/JavaScript, Python, C++ |
+| 10 | [Brief Checker](Project/10_brief_checker/) | Check a clip against a campaign brief before posting, CPM earnings | Node.js |
+| 11 | [Campaign Ranker](Project/11_campaign_ranker/) | Real clipping earnings with max cap, viewer country and platform | Node.js |
+| 12 | [Mini Clipper](Project/12_mini_clipper/) | Your own free AI clipper: Whisper + sliding-window moment picker + FFmpeg | Python |
 | — | [Diwali Card Generator](Project/diwali-site/) | Client-side canvas rendering | HTML, JavaScript |
 
 **How to use a project**
