@@ -1,0 +1,12 @@
+[
+  { "id": "clip1", "platform": "instagram", "sourceId": "demo-show-ep01", "durationSec": 32, "width": 1080, "height": 1920, "watermark": false,
+    "caption": "Ye scene dekh ke hasi nahi rukegi 😂 #ad #DemoShow" },
+  { "id": "clip2", "platform": "instagram", "sourceId": "demo-show-ep01", "durationSec": 28, "width": 1080, "height": 1920, "watermark": false,
+    "caption": "Best moment of the episode #adventure #comedy" },
+  { "id": "clip3", "platform": "instagram", "sourceId": "random-viral-podcast", "durationSec": 41, "width": 1080, "height": 1920, "watermark": false,
+    "caption": "Wait for the end 🔥 #ad" },
+  { "id": "clip4", "platform": "youtube", "sourceId": "demo-show-ep02", "durationSec": 75, "width": 1080, "height": 1920, "watermark": false,
+    "caption": "Full scene #AD" },
+  { "id": "clip5", "platform": "tiktok", "sourceId": "demo-show-ep02", "durationSec": 22, "width": 1920, "height": 1080, "watermark": true,
+    "caption": "lol #ad" }
+]

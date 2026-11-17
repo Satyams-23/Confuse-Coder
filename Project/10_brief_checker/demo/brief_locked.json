@@ -1,0 +1,14 @@
+{
+  "name": "Big Creator: New Video",
+  "status": "locked",
+  "cpm": 1,
+  "budgetLeft": 0,
+  "minViews": 1000,
+  "platforms": ["instagram", "tiktok", "youtube"],
+  "minSec": 15,
+  "maxSec": 60,
+  "aspect": "9:16",
+  "requiredTags": ["#ad"],
+  "sources": ["big-creator-new-video"],
+  "noWatermark": true
+}

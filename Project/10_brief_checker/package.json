@@ -1,0 +1,11 @@
+{
+  "name": "brief-checker",
+  "version": "1.0.0",
+  "description": "Check every clip against the campaign brief before you post it",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js",
+    "check": "node check.js demo/brief.json demo/clips.json"
+  },
+  "license": "ISC"
+}

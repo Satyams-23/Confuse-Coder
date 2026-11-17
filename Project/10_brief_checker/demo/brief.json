@@ -1,0 +1,14 @@
+{
+  "name": "Demo Show: Funny Moments",
+  "status": "open",
+  "cpm": 2,
+  "budgetLeft": 500,
+  "minViews": 1000,
+  "platforms": ["instagram", "tiktok", "youtube"],
+  "minSec": 15,
+  "maxSec": 60,
+  "aspect": "9:16",
+  "requiredTags": ["#ad"],
+  "sources": ["demo-show-ep01", "demo-show-ep02"],
+  "noWatermark": true
+}
