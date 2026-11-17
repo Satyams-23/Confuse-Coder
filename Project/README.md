@@ -15,6 +15,7 @@ Sirf dekho mat, **banao**. Har project ka boilerplate ready hai; tum sirf woh co
 | 10 | [Brief Checker](10_brief_checker/) | @confuse__coder.dev · DEV 10 · MrBeast clipping | Rule checks (whole-tag regex, 9:16), CPM earnings | Node.js |
 | 11 | [Campaign Ranker](11_campaign_ranker/) | @confuse__coder.dev · DEV 11 · GTA 6 clipping | Max cap + country + platform earnings, sort | Node.js |
 | 12 | [Mini Clipper](12_mini_clipper/) | @confuse__coder.dev · DEV 12 · free AI clipping tools | Sliding window + top-k no overlap, Whisper + FFmpeg | Python |
+| 13 | [Island Counter](13_island_counter/) | Graphs EP 03 · DFS / Number of Islands | Grid DFS flood fill, bounds check (Python -1 trap) | Python + C++ |
 | — | [Diwali Card Generator](diwali-site/) | @confuse__coder.dev | HTML + Canvas | Web |
 
 ## Kaise use karein

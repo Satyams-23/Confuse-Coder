@@ -63,6 +63,7 @@ The projects in [`Project/`](Project/) put each concept into a small real-world 
 | 10 | [Brief Checker](Project/10_brief_checker/) | Check a clip against a campaign brief before posting, CPM earnings | Node.js |
 | 11 | [Campaign Ranker](Project/11_campaign_ranker/) | Real clipping earnings with max cap, viewer country and platform | Node.js |
 | 12 | [Mini Clipper](Project/12_mini_clipper/) | Your own free AI clipper: Whisper + sliding-window moment picker + FFmpeg | Python |
+| 13 | [Island Counter](Project/13_island_counter/) | Count islands with DFS flood fill, paint each one, count your own satellite photo | Python, C++ |
 | — | [Diwali Card Generator](Project/diwali-site/) | Client-side canvas rendering | HTML, JavaScript |
 
 **How to use a project**
