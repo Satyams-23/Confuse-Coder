@@ -46,6 +46,18 @@ Phir Claude Code mein `/mcp` → OpusClip → sign in (OAuth).
 Claude.ai pe bhi OpusClip connector hai (Settings → Connectors).
 OpusClip free plan: ~60 credits/month, watermark, export 3 din mein expire (opus.pro/pricing check karo). Agar brief "no watermark" bole toh free plan ke clips reject ho sakte hain.
 
+> ⚠️ **Correction (17 Nov 2026, viewer ke comment ke baad):** MCP **connect** free account pe ho jaata hai, par **clip banwana** (render) MCP se **paid plan** maangta hai. Free account pe "Plan upgrade karo" aayega. Ye hamari galti thi, notes theek kar diye.
+>
+> **Free wala raasta (MCP ke bina):**
+> 1. opus.pro website pe login, campaign ka source video ka link paste karo (free ~60 min/month).
+> 2. Aspect ratio **9:16**, clip length brief ke hisaab se, "Get clips".
+> 3. Clips download karo (3 din mein expire). Free plan pe watermark lagega.
+> 4. Har clip `10_brief_checker` se check karo (source, length, 9:16, #ad, watermark).
+> 5. Brief "no watermark" bole toh free OpusClip ke clips mat daalo. Free + bina watermark chahiye toh open-source raasta: `viewer-projects/12_mini_clipper` (apne laptop pe, Whisper + FFmpeg).
+> 6. Pass hue clip post karo, #ad ke saath, aur link Vyro pe submit karo.
+>
+> Claude ka kaam free mein bhi: brief paste karke captions + #ad + checker chalwana. Sirf clip render MCP se paid hai.
+
 ### Prompt template
 ```
 Ye campaign ka source video hai: <campaign brief wala link>
