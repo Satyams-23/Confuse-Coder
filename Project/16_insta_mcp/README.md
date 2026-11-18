@@ -38,7 +38,7 @@ Notice #2: our code says **5.03%**. When I asked Claude through a connector, it 
 3. App Dashboard → Instagram → **API setup with Instagram business login** → **Add account** (log in on instagram.com) → **Generate token**.
    - Tick only what you need: `instagram_business_basic` + `instagram_business_manage_insights`. Nothing that posts, comments or messages.
    - The token lasts **60 days**. It's shown once, so copy it.
-4. Copy `.env.example` to `.env` and paste it. **Never** share the token or commit `.env`.
+4. Keep the token private: set it as an environment variable (below) or in a `.env` file with one line `IG_TOKEN=...`. **Never** share it or commit `.env` (it is in `.gitignore`).
 
 Test it:
 
