@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Tapri launch</title>
+<!--
+  Demo of the kind of single-file HTML animation Claude (free plan) gives you.
+  It mixes CSS keyframes, setTimeout-triggered classes and a requestAnimationFrame
+  counter, so the renderer has to freeze ALL three kinds of time.
+  "Tapri" is a made-up chai app.
+-->
+<style>
+  :root { --bg:#120a07; --cream:#f6e7cf; --chai:#d98a3d; --accent:#ff5a36; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { width:1080px; height:1920px; overflow:hidden; background:var(--bg); }
+  body { font-family: "Segoe UI", system-ui, sans-serif; color:var(--cream); }
+  .stage { position:absolute; inset:0; display:grid; place-items:center; }
+
+  /* 1. glow that breathes */
+  .glow { position:absolute; width:1400px; height:1400px; border-radius:50%;
+    background:radial-gradient(circle, rgba(217,138,61,.45), transparent 60%);
+    animation: breathe 4s ease-in-out infinite; }
+  @keyframes breathe { 0%,100%{transform:scale(.85);opacity:.6} 50%{transform:scale(1.05);opacity:1} }
+
+  /* 2. the morphing shape: dot -> pill -> cup -> card */
+  .shape { position:absolute; top:640px; left:50%; width:60px; height:60px; margin-left:-30px;
+    background:var(--chai); border-radius:50%;
+    animation: morph 6s cubic-bezier(.7,0,.2,1) forwards; }
+  @keyframes morph {
+    0%   { width:60px;  height:60px;  margin-left:-30px;  border-radius:50%; transform:translateY(200px) scale(0); }
+    12%  { width:60px;  height:60px;  margin-left:-30px;  border-radius:50%; transform:translateY(0) scale(1); }
+    30%  { width:520px; height:120px; margin-left:-260px; border-radius:60px; }
+    55%  { width:300px; height:340px; margin-left:-150px; border-radius:24px 24px 140px 140px; background:var(--cream); }
+    80%,100% { width:760px; height:560px; margin-left:-380px; border-radius:48px; background:#1f130d;
+      box-shadow:0 0 0 4px var(--chai), 0 40px 120px rgba(0,0,0,.6); }
+  }
+
+  /* steam lines, only after the cup appears (class added by setTimeout) */
+  .steam { position:absolute; top:520px; left:50%; width:16px; height:120px; border-radius:8px;
+    background:linear-gradient(transparent, rgba(246,231,207,.8)); opacity:0; }
+  .steam.on { animation: rise 1.4s ease-out infinite; }
+  .s1{margin-left:-60px} .s2{margin-left:-8px; animation-delay:.3s!important} .s3{margin-left:44px; animation-delay:.6s!important}
+  @keyframes rise { 0%{opacity:0;transform:translateY(40px) scaleY(.4)} 40%{opacity:1} 100%{opacity:0;transform:translateY(-120px) scaleY(1)} }
+
+  /* 3. headline words drop in one by one (setTimeout adds .in) */
+  .headline { position:absolute; top:1300px; width:100%; text-align:center; font-weight:900;
+    font-size:132px; letter-spacing:-4px; line-height:1; }
+  .headline span { display:inline-block; opacity:0; transform:translateY(80px) rotate(6deg); }
+  .headline span.in { animation: drop .6s cubic-bezier(.2,1.6,.4,1) forwards; }
+  .headline .hot { color:var(--accent); }
+  @keyframes drop { to { opacity:1; transform:none; } }
+
+  /* card content inside the final shape */
+  .card { position:absolute; top:640px; left:50%; width:760px; height:560px; margin-left:-380px;
+    display:flex; flex-direction:column; justify-content:center; align-items:center; gap:18px; opacity:0; }
+  .card.in { animation: fade .5s ease forwards; }
+  .card .label { font-size:40px; letter-spacing:8px; color:var(--chai); }
+  .card .count { font-size:200px; font-weight:900; font-variant-numeric:tabular-nums; }
+  .card .unit  { font-size:44px; opacity:.8; }
+  @keyframes fade { to { opacity:1; } }
+
+  .cta { position:absolute; bottom:150px; left:50%; transform:translateX(-50%) scale(0); white-space:nowrap;
+    padding:32px 72px; border-radius:80px; background:var(--accent); color:#fff; font-size:56px; font-weight:800; }
+  .cta.in { animation: pop .5s cubic-bezier(.2,1.8,.4,1) forwards; }
+  @keyframes pop { to { transform:translateX(-50%) scale(1); } }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="glow"></div>
+  <div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div>
+  <div class="shape"></div>
+  <div class="card">
+    <div class="label">CUPS DELIVERED</div>
+    <div class="count" id="count">0</div>
+    <div class="unit">in 10 minutes, every time</div>
+  </div>
+  <div class="headline">
+    <span>Chai</span> <span>in</span> <span class="hot">10</span><br><span>minutes.</span>
+  </div>
+  <div class="cta">Order on Tapri</div>
+</div>
+<script>
+  const $ = s => document.querySelector(s);
+  // steam once the cup shape is there
+  setTimeout(() => document.querySelectorAll('.steam').forEach(e => e.classList.add('on')), 2600);
+  setTimeout(() => document.querySelectorAll('.steam').forEach(e => { e.classList.remove('on'); e.style.opacity = 0; }), 4600);
+  // words drop in
+  document.querySelectorAll('.headline span').forEach((w, i) => setTimeout(() => w.classList.add('in'), 1200 + i * 250));
+  // card + counter (requestAnimationFrame + performance.now)
+  setTimeout(() => {
+    $('.card').classList.add('in');
+    const start = performance.now(), target = 125000, dur = 1800;
+    const tick = now => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      $('#count').textContent = Math.round(target * eased).toLocaleString('en-IN');
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, 5000);
+  setTimeout(() => $('.cta').classList.add('in'), 6600);
+</script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tapri Launch</title>
+<!-- REAL output of claude.ai (FREE plan, Sonnet 5.5, 2026-11-16) for the prompt in notes/confuse_coder.dev/09_claude_motion_graphics.md. Copied as-is from the artifact code view. -->
+<style>
+  :root {
+    --bg: #120a07;
+    --accent: #ff5a36;
+    --warm: #d98a3d;
+    --spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease: cubic-bezier(.6, 0, .4, 1);
+    --loop: 8s;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--bg); overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+
+  .stage {
+    position: relative;
+    flex: none;
+    width: 1080px; height: 1920px;
+    background: var(--bg);
+    overflow: hidden;
+    transform-origin: center center;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* wordmark */
+  .mark {
+    position: absolute; top: 96px; left: 0; width: 100%;
+    text-align: center;
+    font-size: 40px; font-weight: 800; letter-spacing: .5em; text-indent: .5em;
+    text-transform: uppercase; color: var(--warm);
+  }
+
+  /* headline */
+  .headline {
+    position: absolute; top: 230px; left: 0; width: 100%;
+    text-align: center;
+    font-size: 140px; font-weight: 900; line-height: 1.05; letter-spacing: -.03em;
+  }
+  .headline .line { display: block; }
+  .w {
+    display: inline-block; opacity: 0;
+    margin: 0 .12em;
+    will-change: transform, opacity;
+  }
+  .w.warm { color: var(--warm); }
+  .w.hot  { color: var(--accent); }
+  .w1 { animation: w1 var(--loop) infinite; }
+  .w2 { animation: w2 var(--loop) infinite; }
+  .w3 { animation: w3 var(--loop) infinite; }
+  .w4 { animation: w4 var(--loop) infinite; }
+
+  /* Each word: drop in with a spring (0.6s), hold, then leave before the loop point */
+  @keyframes w1 {
+    0%    { opacity: 0; transform: translateY(-260px) rotate(-8deg); animation-timing-function: var(--spring); }
+    12.5% { opacity: 0; transform: translateY(-260px) rotate(-8deg); animation-timing-function: var(--spring); }
+    20%   { opacity: 1; transform: translateY(0) rotate(0); }
+    90%   { opacity: 1; transform: translateY(0) rotate(0); animation-timing-function: ease-in; }
+    96%   { opacity: 0; transform: translateY(50px) rotate(0); }
+    100%  { opacity: 0; transform: translateY(50px); }
+  }
+  @keyframes w2 {
+    0%    { opacity: 0; transform: translateY(-260px) rotate(8deg); animation-timing-function: var(--spring); }
+    15%   { opacity: 0; transform: translateY(-260px) rotate(8deg); animation-timing-function: var(--spring); }
+    22.5% { opacity: 1; transform: translateY(0) rotate(0); }
+    90%   { opacity: 1; transform: translateY(0) rotate(0); animation-timing-function: ease-in; }
+    96%   { opacity: 0; transform: translateY(50px); }
+    100%  { opacity: 0; transform: translateY(50px); }
+  }
+  @keyframes w3 {
+    0%    { opacity: 0; transform: translateY(-260px) rotate(-8deg); animation-timing-function: var(--spring); }
+    17.5% { opacity: 0; transform: translateY(-260px) rotate(-8deg); animation-timing-function: var(--spring); }
+    25%   { opacity: 1; transform: translateY(0) rotate(0); }
+    90%   { opacity: 1; transform: translateY(0) rotate(0); animation-timing-function: ease-in; }
+    96%   { opacity: 0; transform: translateY(50px); }
+    100%  { opacity: 0; transform: translateY(50px); }
+  }
+  @keyframes w4 {
+    0%    { opacity: 0; transform: translateY(-260px) rotate(8deg); animation-timing-function: var(--spring); }
+    20%   { opacity: 0; transform: translateY(-260px) rotate(8deg); animation-timing-function: var(--spring); }
+    27.5% { opacity: 1; transform: translateY(0) rotate(0); }
+    90%   { opacity: 1; transform: translateY(0) rotate(0); animation-timing-function: ease-in; }
+    96%   { opacity: 0; transform: translateY(50px); }
+    100%  { opacity: 0; transform: translateY(50px); }
+  }
+
+  /* the morphing shape: dot -> pill -> cup -> card */
+  .shape {
+    position: absolute; left: 50%; top: 960px;
+    transform: translate(-50%, -50%);
+    width: 56px; height: 56px;
+    background: var(--accent);
+    border-radius: 28px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+    animation: morph var(--loop) infinite;
+    will-change: width, height, border-radius, clip-path;
+  }
+  @keyframes morph {
+    0%   { width: 56px;  height: 56px;  border-radius: 28px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); animation-timing-function: var(--spring); }
+    5%   { width: 76px;  height: 76px;  border-radius: 38px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); animation-timing-function: var(--ease); }
+    11%  { width: 56px;  height: 56px;  border-radius: 28px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); animation-timing-function: var(--spring); }
+    24%  { width: 560px; height: 150px; border-radius: 75px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); }
+    27%  { width: 560px; height: 150px; border-radius: 75px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); animation-timing-function: var(--spring); }
+    42%  { width: 400px; height: 440px; border-radius: 36px 36px 130px 130px; clip-path: polygon(0 0,100% 0,88% 100%,12% 100%); }
+    46%  { width: 400px; height: 440px; border-radius: 36px 36px 130px 130px; clip-path: polygon(0 0,100% 0,88% 100%,12% 100%); animation-timing-function: var(--spring); }
+    60%  { width: 820px; height: 640px; border-radius: 64px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); }
+    88%  { width: 820px; height: 640px; border-radius: 64px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); animation-timing-function: var(--ease); }
+    97%  { width: 56px;  height: 56px;  border-radius: 28px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); }
+    100% { width: 56px;  height: 56px;  border-radius: 28px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%); }
+  }
+
+  /* chai surface inside the cup */
+  .chai {
+    position: absolute; left: 0; right: 0; top: 0; height: 26%;
+    background: var(--warm);
+    opacity: 0;
+    animation: chai var(--loop) infinite;
+  }
+  @keyframes chai {
+    0%, 36% { opacity: 0; transform: translateY(-30px); animation-timing-function: var(--spring); }
+    42%, 46% { opacity: 1; transform: translateY(0); animation-timing-function: ease-in; }
+    52%, 100% { opacity: 0; transform: translateY(0); }
+  }
+
+  /* cup handle (sibling, so clip-path doesn't cut it) */
+  .handle {
+    position: absolute; left: 718px; top: 840px;
+    width: 120px; height: 160px;
+    border: 30px solid var(--accent); border-left: none;
+    border-radius: 0 90px 90px 0;
+    transform-origin: left center;
+    opacity: 0; transform: scale(0);
+    animation: handle var(--loop) infinite;
+  }
+  @keyframes handle {
+    0%, 37% { opacity: 0; transform: scale(0); animation-timing-function: var(--spring); }
+    43%, 46% { opacity: 1; transform: scale(1); animation-timing-function: ease-in; }
+    50%, 100% { opacity: 0; transform: scale(.2); }
+  }
+
+  /* steam */
+  .steam {
+    position: absolute; top: 610px; width: 26px; height: 96px;
+    background: var(--warm); border-radius: 13px;
+    opacity: 0;
+  }
+  .s1 { left: 492px; animation: steamA var(--loop) infinite; }
+  .s2 { left: 560px; animation: steamB var(--loop) infinite; }
+  @keyframes steamA {
+    0%, 39% { opacity: 0; transform: translateY(36px) scaleY(.4); animation-timing-function: var(--spring); }
+    43% { opacity: 1; transform: translateY(0) scaleY(1); animation-timing-function: ease-out; }
+    50% { opacity: 0; transform: translateY(-50px) scaleY(1.1); }
+    100% { opacity: 0; }
+  }
+  @keyframes steamB {
+    0%, 40% { opacity: 0; transform: translateY(36px) scaleY(.4); animation-timing-function: var(--spring); }
+    44% { opacity: 1; transform: translateY(0) scaleY(1); animation-timing-function: ease-out; }
+    51% { opacity: 0; transform: translateY(-60px) scaleY(1.1); }
+    100% { opacity: 0; }
+  }
+
+  /* card content (centered on the shape, fixed width so it never reflows) */
+  .card {
+    position: absolute; left: 50%; top: 960px;
+    width: 820px; height: 640px;
+    transform: translate(-50%, -50%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--bg); text-align: center;
+    opacity: 0;
+    animation: cardIn var(--loop) infinite;
+    pointer-events: none;
+  }
+  @keyframes cardIn {
+    0%, 57% { opacity: 0; transform: translate(-50%, -46%) scale(.92); animation-timing-function: var(--spring); }
+    65%, 88% { opacity: 1; transform: translate(-50%, -50%) scale(1); animation-timing-function: ease-in; }
+    92%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(.92); }
+  }
+  .card .label {
+    font-size: 38px; font-weight: 800; letter-spacing: .22em; text-indent: .22em;
+    text-transform: uppercase;
+  }
+  .card .num {
+    font-size: 190px; font-weight: 900; letter-spacing: -.04em; line-height: 1.05;
+    font-variant-numeric: tabular-nums; margin: 18px 0 8px;
+  }
+  .card .sub { font-size: 44px; font-weight: 700; }
+
+  /* CTA */
+  .cta-wrap {
+    position: absolute; left: 50%; top: 1485px;
+    width: 700px; height: 150px; margin-left: -350px;
+    opacity: 0;
+    animation: cta var(--loop) infinite;
+  }
+  @keyframes cta {
+    0%, 74% { opacity: 0; transform: translateY(80px) scale(.5); animation-timing-function: var(--spring); }
+    82%, 90% { opacity: 1; transform: translateY(0) scale(1); animation-timing-function: ease-in; }
+    95%, 100% { opacity: 0; transform: translateY(40px) scale(.9); }
+  }
+  .cta {
+    position: absolute; inset: 0;
+    background: var(--accent); color: var(--bg);
+    border-radius: 75px;
+    display: flex; align-items: center; justify-content: center; gap: 24px;
+    font-size: 54px; font-weight: 900; letter-spacing: -.01em;
+  }
+  .cta .arrow { display: inline-block; animation: nudge var(--loop) infinite; }
+  @keyframes nudge {
+    0%, 82% { transform: translateX(0); animation-timing-function: var(--spring); }
+    86% { transform: translateX(14px); animation-timing-function: var(--spring); }
+    90%, 100% { transform: translateX(0); }
+  }
+  .ring {
+    position: absolute; inset: 0; border-radius: 75px;
+    border: 5px solid var(--warm);
+    opacity: 0;
+    animation: ring var(--loop) infinite;
+  }
+  @keyframes ring {
+    0%, 82% { opacity: 0; transform: scale(1); }
+    83% { opacity: 1; transform: scale(1); animation-timing-function: ease-out; }
+    90%, 100% { opacity: 0; transform: scale(1.22, 1.5); }
+  }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="mark">Tapri</div>
+
+  <h1 class="headline">
+    <span class="line"><span class="w warm w1">Chai</span><span class="w warm w2">in</span></span>
+    <span class="line"><span class="w hot w3">10</span><span class="w hot w4">minutes.</span></span>
+  </h1>
+
+  <div class="steam s1"></div>
+  <div class="steam s2"></div>
+
+  <div class="shape" id="shape"><div class="chai"></div></div>
+  <div class="handle"></div>
+
+  <div class="card">
+    <div class="label">Tapri &middot; cups delivered</div>
+    <div class="num" id="num">0</div>
+    <div class="sub">and still brewing</div>
+  </div>
+
+  <div class="cta-wrap">
+    <div class="ring"></div>
+    <div class="cta">Order on Tapri <span class="arrow">&rarr;</span></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var LOOP = 8000;
+  var stage = document.getElementById('stage');
+  var num = document.getElementById('num');
+  var shape = document.getElementById('shape');
+
+  // fit the 1080x1920 stage to the window (add #1x to the URL for native pixels)
+  function fit() {
+    var s = location.hash === '#1x' ? 1 : Math.min(innerWidth / 1080, innerHeight / 1920);
+    stage.style.transform = 'scale(' + s + ')';
+    stage.style.margin = (-(1920 * (1 - s)) / 2) + 'px ' + (-(1080 * (1 - s)) / 2) + 'px';
+  }
+  addEventListener('resize', fit);
+  addEventListener('hashchange', fit);
+  fit();
+
+  // counter is driven by the CSS animation clock so it never drifts from the loop
+  var anim = null;
+  var T0 = 4700, T1 = 6500, RESET = 7100;
+  function tick() {
+    if (!anim) {
+      var list = shape.getAnimations();
+      anim = list.length ? list[0] : null;
+    }
+    var t = anim ? Number(anim.currentTime) % LOOP : performance.now() % LOOP;
+    var v = 0;
+    if (t >= T0 && t < RESET) {
+      var p = Math.min(1, (t - T0) / (T1 - T0));
+      v = Math.round(125000 * (1 - Math.pow(1 - p, 3)));
+    }
+    num.textContent = v.toLocaleString('en-IN');
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

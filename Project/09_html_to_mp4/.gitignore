@@ -1,0 +1,4 @@
+node_modules/
+*.mp4
+!demo/launch.mp4
+_rec/
