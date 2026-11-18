@@ -41,7 +41,7 @@ Claude → Customize → Connectors → your connector → **Tool permissions**:
 9. Draft replies to my unanswered comments. I'll post them myself.
 10. Write a caption + 5 hashtags for this reel idea: ___
 
-What it found on my account (prompts 1 + 5): #1 by save rate was my Sudoku reel (5,137 views, 91 saves). Only 2 of the top 5 asked people to save, so "save karo" wasn't what made them work. 13 of 19 viewer comments were one word (notes / prompt / link), and my 7 quiz questions got 0 answers.
+What it found on @confuse__coder.dev (prompts 1 + 5): #1 by save rate was my "7 free AI clipping tools" reel (77,341 views, 5,392 saves, 6.97%). "Comment NOTES" was on the weak reels too, so the CTA alone wasn't the difference; the top reels had a tool people could use. Of 1,660 viewer comments, ~950 were just "notes", and ~80 were scams (APK files, betting, loans).
 
 ## 6. Safety card
 - **Never type your Instagram password** on a connector's site. Official login pages only (instagram.com / facebook.com).
