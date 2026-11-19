@@ -64,6 +64,7 @@ The projects in [`Project/`](Project/) put each concept into a small real-world 
 | 11 | [Campaign Ranker](Project/11_campaign_ranker/) | Real clipping earnings with max cap, viewer country and platform | Node.js |
 | 12 | [Mini Clipper](Project/12_mini_clipper/) | Your own free AI clipper: Whisper + sliding-window moment picker + FFmpeg | Python |
 | 13 | [Island Counter](Project/13_island_counter/) | Count islands with DFS flood fill, paint each one, count your own satellite photo | Python, C++ |
+| 17 | [Stream Parts](Project/17_stream_parts/) | Long stream to AI-ready transcript parts with a prompt, then finished 9:16 clips (facecam on top, captions, credit) | Python |
 | — | [Diwali Card Generator](Project/diwali-site/) | Client-side canvas rendering | HTML, JavaScript |
 
 **How to use a project**
