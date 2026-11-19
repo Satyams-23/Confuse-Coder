@@ -1,5 +1,5 @@
-# Graphs EP 01 · Graph kya hai + Adjacency List
-*@confuse__coder · Graphs season EP 01 · Comment "NOTES" → ye notes + Mutual Friends Finder project DM mein*
+# Graph kya hai + Adjacency List
+*@confuse__coder · Graphs EP 01*
 
 ---
 
@@ -88,6 +88,6 @@ Tum kisi ko follow karo, toh zaroori nahi woh tumhe follow kare. Isliye Instagra
 
 ## 8. Project: Mutual Friends Finder
 Friend pairs se adjacency list banao, mutual friends aur "Suggested for you" (friends of friends) print karo. Sirf `add_edge()` aur `suggest()` khud likho. Python + C++, starter + solution + tests.
-→ `viewer-projects/06_mutual_friends_finder/`
+→ [Mutual Friends Finder](https://www.confuse-coder.site/projects/06_mutual_friends_finder)
 
 **Next:** BFS: Kabir se Neel kitni dosti door hai?

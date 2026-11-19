@@ -1,5 +1,5 @@
-# 1 SMS se 4 accounts khaali — Attack chain todne ki checklist
-*@confuse__coder.dev · Reel 04 · Comment "NOTES" → ye notes DM mein*
+# Data leak attack chain: todne ki checklist
+*@confuse__coder.dev · DEV 04 · Reel: 1 SMS se 4 accounts khaali*
 
 ---
 

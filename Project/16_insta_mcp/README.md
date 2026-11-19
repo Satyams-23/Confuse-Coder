@@ -1,6 +1,6 @@
-# 16 · Your own Instagram MCP (read-only)
+# Your own Instagram MCP (read-only MCP server)
+*@confuse__coder.dev · DEV 14 (apna Instagram connector) ka project*
 
-From reel **DEV 14** on [@confuse__coder.dev](https://instagram.com/confuse__coder.dev).
 Claude's directory has 426 Instagram results and none of them are made by Meta. So we build our own:
 a tiny **read-only** MCP server that talks straight to Meta's official API. No third-party company holds your data.
 

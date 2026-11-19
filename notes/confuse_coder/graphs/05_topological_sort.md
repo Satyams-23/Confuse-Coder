@@ -1,5 +1,5 @@
-# Graphs EP 05 · Topological Sort
-*@confuse__coder · Graphs season EP 05 · Comment "NOTES" → ye notes + Shaadi Planner project DM mein*
+# Topological Sort
+*@confuse__coder · Graphs EP 05 · Reel: 6 kapde, 720 tareeke, sahi sirf 61*
 
 ---
 
@@ -97,7 +97,7 @@ Topo order unique nahi hota. Yahan 61 sahi orders hain. Interview / LeetCode mei
 - **269** Alien Dictionary (letters ka order)
 
 ## Project: Shaadi Planner
-`viewer-projects/15_shaadi_planner/` · Python + C++ · tum likhoge sirf `topo_days()` (Kahn) · har din ke kaam + gol chakkar mein phanse kaam.
+[Shaadi Planner](https://www.confuse-coder.site/projects/15_shaadi_planner) · Python + C++ · tum likhoge sirf `topo_days()` (Kahn) · har din ke kaam + gol chakkar mein phanse kaam.
 
 ## Pinned quiz
 A→C, B→C, C→D. Kitne sahi topological order hain? (Answer next reel mein.)

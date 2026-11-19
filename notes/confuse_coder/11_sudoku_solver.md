@@ -1,5 +1,5 @@
-# Duniya ka sabse mushkil Sudoku = 1 second? (Sudoku Solver, Backtracking): Notes
-*@confuse__coder · Recursion EP 11 · Comment "NOTES" → ye notes + Timetable starter project + practice questions DM mein*
+# Sudoku Solver (Backtracking)
+*@confuse__coder · Recursion EP 11 · Reel: Duniya ka sabse mushkil Sudoku = 1 second?*
 
 ---
 
@@ -81,7 +81,7 @@ Agar `return true` na likho toh solution milne ke baad bhi loop chalta rahega au
 | Row / column / box rule | Teacher / room / section rule |
 | Koi digit fit nahi → wapas | Koi slot fit nahi → wapas |
 
-Starter project (DM mein): input, table printing aur tests ready hain. Tumhe sirf `solve()` likhna hai (~15 lines). Output:
+Starter project ([College Timetable Generator](https://www.confuse-coder.site/projects/01_college_timetable)): input, table printing aur tests ready hain. Tumhe sirf `solve()` likhna hai (~15 lines). Output:
 ```
  9-10  | CSE-A Maths (Rahul)    | CSE-B Chem (Priya)
 10-11  | CSE-A Physics (Amit)   | CSE-B Maths (Rahul)

@@ -1,5 +1,5 @@
-# Ye documentary code hai: Cinematic Skill
-*@confuse__coder.dev · Reel 08 · Comment "NOTES" → ye notes DM mein*
+# Cinematic Skill: documentary-style videos from code
+*@confuse__coder.dev · DEV 08 · Reel: Ye documentary code hai*
 
 ---
 

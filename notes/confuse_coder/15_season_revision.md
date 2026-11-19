@@ -1,5 +1,5 @@
-# Recursion Season · Revision Sheet (EP 01–14)
-*@confuse__coder · Recursion EP 15 (season revision) · Comment "NOTES" → ye sheet + season ke 4 projects DM mein*
+# Recursion revision sheet (EP 01–14)
+*@confuse__coder · Recursion EP 15*
 
 ---
 
@@ -82,10 +82,10 @@ Word Search mein har khaana ek **node** tha, aur upar / neeche / left / right pa
 ---
 
 ## 4. Season ke projects
-1. College Timetable (EP 11) → `viewer-projects/01_college_timetable/`
-2. Leaderboard Merge (EP 12) → `viewer-projects/02_leaderboard_merge/`
-3. UPI Change Maker (EP 13) → `viewer-projects/03_upi_change_maker/`
-4. Newspaper Word Puzzle Solver (EP 14) → `viewer-projects/04_word_puzzle_solver/`
+1. College Timetable (EP 11) → [College Timetable Generator](https://www.confuse-coder.site/projects/01_college_timetable)
+2. Leaderboard Merge (EP 12) → [Leaderboard Merge](https://www.confuse-coder.site/projects/02_leaderboard_merge)
+3. UPI Change Maker (EP 13) → [UPI Change Maker](https://www.confuse-coder.site/projects/03_upi_change_maker)
+4. Newspaper Word Puzzle Solver (EP 14) → [Newspaper Word Puzzle Solver](https://www.confuse-coder.site/projects/04_word_puzzle_solver)
 
 ---
 

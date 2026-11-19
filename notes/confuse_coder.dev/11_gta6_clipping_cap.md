@@ -1,4 +1,7 @@
-# DEV 11 · GTA 6 clips = $1,000? Asli: $35
+# GTA 6 clipping payouts: asli cap
+*@confuse__coder.dev · DEV 11 · Reel: GTA 6 clips = $1,000? Asli: $35*
+
+---
 
 > Live check: 17 Nov 2026 (contentrewards.com public pages, logged out). Campaigns roz badalte hain: 19 Nov ko naye GTA campaigns aa sakte hain, isliye khud page kholo.
 
@@ -32,7 +35,7 @@ Instagram un country tables mein listed nahi hai. Join karke brief padho, phir d
 2. **X paid clipping** (9 Nov 2026): Premium + eligibility, sirf pre-recorded videos (2 min+), clip 5-60 sec, max 30% video. **Live streams abhi clip nahi hote.**
 
 ## Project: 11_campaign_ranker
-`viewer-projects/11_campaign_ranker` (Node 18+, no install)
+[Campaign Ranker](https://www.confuse-coder.site/projects/11_campaign_ranker) (Node 18+, no install)
 ```
 node test.js                     # pehle FAILED
 # starter.js: earn() + rank() likho

@@ -1,5 +1,5 @@
 # Auto Fare Learner (your first ML model)
-*@confuse__coder.dev · AI/ML S1 EP01 project ("Kisi ne rule nahi bataya")*
+*@confuse__coder.dev · AI/ML EP 01 (Kisi ne rule nahi bataya) ka project*
 
 Tumhare paas 6 auto rides ka bill hai, par rate card nahi. Computer ko rule mat batao,
 use **khud seekhne do**. Bas ek function tum likhoge: `train_step()`, ek "guess → galti → adjust" step.

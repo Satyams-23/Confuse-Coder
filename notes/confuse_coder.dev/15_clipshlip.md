@@ -1,4 +1,7 @@
-# DEV 15 · ClipShlip: free AI clipper, worth it?
+# ClipShlip review: free AI clipper
+*@confuse__coder.dev · DEV 15 · Reel: ClipShlip, worth it?*
+
+---
 
 Checked on 18 Nov 2026. Free tools change fast, so re-check the links yourself.
 

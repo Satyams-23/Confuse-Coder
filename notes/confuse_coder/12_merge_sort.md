@@ -1,5 +1,5 @@
-# 1 crore numbers: 14 ghante vs 1 second? (Merge Sort, Divide & Conquer): Notes
-*@confuse__coder · Recursion EP 12 · Comment "NOTES" → ye notes + Leaderboard Merge project + practice questions DM mein*
+# Merge Sort (Divide & Conquer)
+*@confuse__coder · Recursion EP 12 · Reel: 1 crore numbers: 14 ghante vs 1 second?*
 
 ---
 
@@ -107,6 +107,6 @@ def merge_sort(a):
 
 ## 7. Project: Leaderboard Merge
 Do game servers ke sorted leaderboard jodo, apna merge sort likho, aur bubble sort se race karao (comparisons gine jaate hain). Python + C++, starter + solution + tests.
-→ `viewer-projects/02_leaderboard_merge/`
+→ [Leaderboard Merge](https://www.confuse-coder.site/projects/02_leaderboard_merge)
 
 **Next:** Combination Sum / duplicates in backtracking → phir Word Search (graphs ka darwaza).

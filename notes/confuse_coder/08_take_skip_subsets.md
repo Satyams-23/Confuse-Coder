@@ -1,5 +1,5 @@
-# 3 toppings = kitne pizza? (Take / Skip, Subsets): Notes
-*@confuse__coder · Recursion EP 08 · Comment "NOTES" → ye notes DM mein*
+# Subsets (Take / Skip)
+*@confuse__coder · Recursion EP 08 · Reel: 3 toppings = kitne pizza?*
 
 ---
 

@@ -1,6 +1,6 @@
-# 17 · Stream Parts: make AI read the MIDDLE of a long stream
+# Stream Parts (split a long transcript by time)
+*@confuse__coder.dev · DEV 18 (AI ko long stream ka beech wala hissa padhwao) ka project*
 
-From reel **DEV 18** on [@confuse__coder.dev](https://instagram.com/confuse__coder.dev).
 I pasted Kai Cenat's 11h35m GTA 6 stream link into free Gemini and asked for the 10 best clips. 9 came from the first 1h47m and 1 from the last 6 minutes.
 The middle 9h43m got 0 clips, including the Bigfoot hunt at 9:44. When pushed, Gemini itself said the transcript it got "has gaps in the middle hours (01:47:20–11:28:25)".
 Fix: give the AI the transcript **one part at a time**. This tool makes those parts, each with the clip prompt already on top.

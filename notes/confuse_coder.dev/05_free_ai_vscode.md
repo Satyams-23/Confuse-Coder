@@ -1,5 +1,5 @@
-# ₹0 AI coder in VS Code — koi extension nahi
-*@confuse__coder.dev · Reel 05 · Comment "NOTES" → ye notes DM mein*
+# Free AI coder in VS Code (no extension)
+*@confuse__coder.dev · DEV 05 · Reel: ₹0 AI coder in VS Code, koi extension nahi*
 
 ---
 

@@ -6,18 +6,18 @@ import { useEffect, useState } from "react";
 import { useTheme, type Theme } from "./ThemeProvider";
 
 const LINKS = [
-  { href: "/#notes", label: "Notes" },
+  { href: "/notes", label: "Notes" },
+  { href: "/projects", label: "Projects" },
   { href: "/#playground", label: "Playground" },
   { href: "/#game", label: "Game" },
-  { href: "/#projects", label: "Projects" },
   { href: "/#contact", label: "Contact" },
 ];
 
-export function AccountSwitch({ compact = false }: { compact?: boolean }) {
+export function AccountSwitch() {
   const { theme, switchTo } = useTheme();
-  const opts: { id: Theme; label: string; logo: string }[] = [
-    { id: "cc", label: compact ? "DSA" : "confuse__coder", logo: "/brand/cc.jpg" },
-    { id: "dev", label: ".dev", logo: "/brand/dev-logo.svg" },
+  const opts: { id: Theme; label: string; short: string; logo: string }[] = [
+    { id: "cc", label: "confuse__coder", short: "DSA", logo: "/brand/cc.jpg" },
+    { id: "dev", label: ".dev", short: ".dev", logo: "/brand/dev-logo.svg" },
   ];
   return (
     <div className="switch" role="radiogroup" aria-label="Choose account">
@@ -30,7 +30,8 @@ export function AccountSwitch({ compact = false }: { compact?: boolean }) {
           onClick={(e) => switchTo(o.id, { x: e.clientX, y: e.clientY })}
         >
           <Image src={o.logo} alt="" width={18} height={18} className={`sw-logo sw-${o.id}`} />
-          {o.label}
+          <span className="sw-long">{o.label}</span>
+          <span className="sw-short">{o.short}</span>
         </button>
       ))}
     </div>
@@ -40,6 +41,7 @@ export function AccountSwitch({ compact = false }: { compact?: boolean }) {
 export function Nav() {
   const { theme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const on = () => setScrolled(scrollY > 40);
     on();
@@ -48,21 +50,31 @@ export function Nav() {
   }, []);
 
   return (
-    <header className={`nav ${scrolled ? "scrolled" : ""}`}>
+    <header className={`nav ${scrolled ? "scrolled" : ""} ${open ? "open" : ""}`}>
       <Link href="/" className="nav-logo" aria-label="Confuse Coder home">
         <Image src={theme === "dev" ? "/brand/dev-logo.svg" : "/brand/cc.jpg"} alt="" width={30} height={30} />
         <span>
           Confuse Coder<b className="only-dev">.dev</b>
         </span>
       </Link>
-      <nav className="nav-links">
+      <nav className="nav-links" id="nav-links">
         {LINKS.map((l) => (
-          <a key={l.href} href={l.href}>
+          <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
             {l.label}
-          </a>
+          </Link>
         ))}
       </nav>
       <AccountSwitch />
+      <button
+        className="nav-burger"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        aria-controls="nav-links"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span />
+        <span />
+      </button>
       <style>{`
         .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:6px;
           padding:6px;border-radius:999px;border:var(--bw) solid var(--line);background:color-mix(in srgb,var(--bg) 70%,transparent);
@@ -86,7 +98,25 @@ export function Nav() {
         [data-theme=dev] .switch button.on{background:#111;color:var(--accent)}
         .sw-logo{flex:none;object-fit:cover}.sw-cc{border-radius:50%}.sw-dev{border-radius:4px;outline:1.5px solid #111}
         .switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-        @media (max-width:820px){.nav-links{display:none}.nav{width:calc(100% - 24px);justify-content:space-between}}
+        .sw-short,.nav-burger{display:none}
+        @media (max-width:820px){
+          .nav{width:calc(100% - 24px);top:10px;flex-wrap:wrap;border-radius:22px;gap:4px}
+          [data-theme=dev] .nav{border-radius:14px}
+          .nav-logo{padding:0 10px 0 4px;margin-right:auto;border-right:0}
+          .switch{margin-left:0}
+          .sw-long{display:none}.sw-short{display:inline}
+          .switch button{padding:5px 10px 5px 5px}
+          .nav-burger{all:unset;cursor:pointer;display:grid;place-content:center;gap:5px;width:38px;height:38px;border-radius:50%;flex:none}
+          [data-theme=dev] .nav-burger{border-radius:8px}
+          .nav-burger span{display:block;width:18px;height:2px;border-radius:2px;background:var(--fg);transition:transform .25s}
+          .nav.open .nav-burger span:first-child{transform:translateY(3.5px) rotate(45deg)}
+          .nav.open .nav-burger span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+          .nav-burger:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+          .nav-links{display:none;order:9;width:100%;flex-direction:column;padding:6px 4px 8px;border-top:1px solid var(--line);margin-top:4px}
+          .nav.open .nav-links{display:flex}
+          .nav-links a{padding:13px 14px;font-size:16px;color:var(--fg)}
+        }
+        @media (max-width:520px){.nav-logo span{display:none}}
       `}</style>
     </header>
   );

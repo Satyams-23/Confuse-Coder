@@ -1,4 +1,7 @@
-# DEV 10 · MrBeast clip = ₹0? Clipping ka asli hisaab
+# Clipping ka asli hisaab: MrBeast clip ki kamaai
+*@confuse__coder.dev · DEV 10 · Reel: MrBeast clip = ₹0?*
+
+---
 
 > Live check: 17 Nov 2026. Campaigns open aur band hote rehte hain, isliye post karne se pehle site khud kholo.
 
@@ -53,7 +56,7 @@ OpusClip free plan: ~60 credits/month, watermark, export 3 din mein expire (opus
 > 2. Aspect ratio **9:16**, clip length brief ke hisaab se, "Get clips".
 > 3. Clips download karo (3 din mein expire). Free plan pe watermark lagega.
 > 4. Har clip `10_brief_checker` se check karo (source, length, 9:16, #ad, watermark).
-> 5. Brief "no watermark" bole toh free OpusClip ke clips mat daalo. Free + bina watermark chahiye toh open-source raasta: `viewer-projects/12_mini_clipper` (apne laptop pe, Whisper + FFmpeg).
+> 5. Brief "no watermark" bole toh free OpusClip ke clips mat daalo. Free + bina watermark chahiye toh open-source raasta: [Mini Clipper](https://www.confuse-coder.site/projects/12_mini_clipper) (apne laptop pe, Whisper + FFmpeg).
 > 6. Pass hue clip post karo, #ad ke saath, aur link Vyro pe submit karo.
 >
 > Claude ka kaam free mein bhi: brief paste karke captions + #ad + checker chalwana. Sirf clip render MCP se paid hai.
@@ -68,7 +71,7 @@ Sirf <humorous / emotional / jo brief bole> moments chuno.
 ```
 
 ## Project: 10_brief_checker
-`viewer-projects/10_brief_checker/`: tum `check(clip, brief)` aur `earnings(views, brief)` likhoge. 20 tests.
+[Brief Checker](https://www.confuse-coder.site/projects/10_brief_checker): tum `check(clip, brief)` aur `earnings(views, brief)` likhoge. 20 tests.
 Trap: `#adventure` mein bhi "#ad" hai, par wo disclosure nahi hai.
 
 ## Sources

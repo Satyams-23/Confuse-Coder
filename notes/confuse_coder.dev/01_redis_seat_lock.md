@@ -1,5 +1,5 @@
 # Seat "Hold" Lock: Redis NX + TTL
-**confuse_coder.dev · Reel 01 notes** · Comment keyword: **NOTES**
+*@confuse__coder.dev · DEV 01*
 
 ---
 

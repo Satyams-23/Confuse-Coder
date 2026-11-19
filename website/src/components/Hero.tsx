@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "./ThemeProvider";
@@ -96,9 +97,9 @@ export function Hero() {
           <p className="hero-sub">{c.sub}</p>
 
           <div className="hero-cta">
-            <a href="#notes" className="btn btn-primary">
+            <Link href="/notes" className="btn btn-primary">
               Notes padho <span className="arrow">→</span>
-            </a>
+            </Link>
             <a
               href={`https://instagram.com/${c.handle.slice(1)}`}
               target="_blank"
@@ -110,7 +111,10 @@ export function Hero() {
           </div>
 
           <p className="hero-hint mono">
-            <span className="pulse" /> Reel pe comment karo <b>NOTES</b>, link yahin aata hai.
+            <span className="pulse" />
+            <span>
+              Reel pe comment karo <b>NOTES</b>, link yahin aata hai.
+            </span>
           </p>
         </div>
 
@@ -124,7 +128,8 @@ export function Hero() {
             aria-label="Scattered logo pieces that snap together into the Confuse Coder logo"
           >
             <HeroScene clear={clear} theme={theme} />
-            <span className="scene-hint mono">{clear ? "↺ hover hatao: bikhra do" : "hover karo: logo jodo"}</span>
+            <span className="scene-hint mono"><span className="hint-hover">{clear ? "↺ hover hatao: bikhra do" : "hover karo: logo jodo"}</span>
+              <span className="hint-tap">{clear ? "↺ tap karo: bikhra do" : "tap karo: logo jodo"}</span></span>
           </div>
           <div className="typer-slot">
             <CodeTyper theme={theme} />
@@ -161,6 +166,9 @@ export function Hero() {
         .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
         .hero-hint{margin-top:28px;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:10px}
         .hero-hint b{color:var(--fg)}
+        .pulse{flex:none}
+        .hint-tap{display:none}
+        @media (hover:none){.hint-hover{display:none}.hint-tap{display:inline}}
         .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 1.8s infinite}
         [data-theme=dev] .pulse{background:var(--accent-3);border:2px solid #111}
         @keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}

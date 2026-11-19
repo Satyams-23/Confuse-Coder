@@ -1,5 +1,5 @@
-# Graphs EP 04 · Cycle Detection (Directed Graph)
-*@confuse__coder · Graphs season EP 04 · Comment "NOTES" → ye notes + Formula Sheet project DM mein*
+# Cycle Detection (Directed Graph)
+*@confuse__coder · Graphs EP 04*
 
 ---
 
@@ -128,7 +128,7 @@ wapas → koi cycle nahi ✅
 - **684** Redundant Connection (undirected cycle)
 
 ## Project: Formula Sheet
-`viewer-projects/14_formula_sheet/` · Python (poori mini spreadsheet) + C++ (graph) · tum likhoge sirf `find_cycle()` · loop ka poora raasta print hota hai jaise `B6 → B8 → B6`.
+[Formula Sheet](https://www.confuse-coder.site/projects/14_formula_sheet) · Python (poori mini spreadsheet) + C++ (graph) · tum likhoge sirf `find_cycle()` · loop ka poora raasta print hota hai jaise `B6 → B8 → B6`.
 
 ## Pinned quiz
 A→B, A→C, B→D, C→D, D→E. Reel wala buggy code (sirf visited) yahan CYCLE bolega ya nahi? Sahi answer kya hai? (Answer next reel mein.)

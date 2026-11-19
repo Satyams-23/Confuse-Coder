@@ -1,5 +1,5 @@
-# Memo bhi crash ho gaya? (Tabulation): Notes
-*@confuse__coder · Recursion EP 07 · Comment "NOTES" → ye notes DM mein*
+# Tabulation
+*@confuse__coder · Recursion EP 07 · Reel: Memo bhi crash ho gaya?*
 
 ---
 

@@ -1,4 +1,7 @@
-# ScaleReach fact check: 4 claims vs its own website (DEV 17)
+# ScaleReach fact check: 4 claims vs its own website
+*@confuse__coder.dev · DEV 17*
+
+---
 
 A viral reel promoted [ScaleReach](https://www.scalereach.ai/) on the GTA 6 launch. I checked its 4 big claims on 19 Nov 2026, using the tool's **own** website and the pages the reel showed.
 

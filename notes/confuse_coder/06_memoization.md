@@ -1,5 +1,5 @@
-# 4000 crore calls → sirf 99 (Memoization): Notes
-*@confuse__coder · Recursion EP 06 · Comment "NOTES" → ye notes DM mein*
+# Memoization
+*@confuse__coder · Recursion EP 06 · Reel: 4000 crore calls → sirf 99*
 
 ---
 

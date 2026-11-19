@@ -1,4 +1,7 @@
-# Meta Muse for GTA clips: what it is, why a prompt works, and the India catch (DEV 19)
+# Meta Muse for clipping: what it is and the India catch
+*@confuse__coder.dev · DEV 19*
+
+---
 
 Checked 19 Nov 2026 on [muse.ai](https://muse.ai/) and Meta's help page [About Muse subscriptions](https://www.meta.com/help/subscriptions/1021145227643680/). We did **not** test Muse ourselves (it isn't available in India).
 

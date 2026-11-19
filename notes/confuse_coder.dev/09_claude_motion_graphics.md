@@ -1,6 +1,7 @@
-# DEV 09 · Claude se motion graphics, ₹0 mein (aur MP4 khud banao)
+# Claude motion graphics to MP4, ₹0 mein
+*@confuse__coder.dev · DEV 09 · Reel: Claude se motion graphics, ₹0 mein*
 
-Reel: @confuse__coder.dev DEV 09 · Project: `viewer-projects/09_html_to_mp4`
+---
 
 ## 1. Prompt template (copy karo, brackets bharo)
 

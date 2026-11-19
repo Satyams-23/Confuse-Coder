@@ -1,4 +1,7 @@
-# CarryMinati ka 9 ghante ka GTA 6 stream → clips ready, ₹0, 3 steps (DEV 18)
+# Long stream se AI clips: beech wala hissa bhi
+*@confuse__coder.dev · DEV 18 · Reel: CarryMinati ka 9 ghante ka GTA 6 stream → clips ready, ₹0, 3 steps*
+
+---
 
 Free tool + my prompt. Tested on 19 Nov 2026 with free Gemini (gemini.google.com, India, no VPN) and CarryMinati's stream
 "CARRYMINATI PLAYS GTA VI | NO PROMOTIONS" (9h45m, 1.6 crore views).
@@ -15,7 +18,7 @@ Pasting everything at once doesn't fully fix it either: long inputs get "Lost in
 
 The same thing happened on Kai Cenat's 11h35m GTA 6 stream ("gaps in the middle hours (01:47:20–11:28:25)"; its Bigfoot hunt at 9:44 was missed) and IShowSpeed's 2h51m Obama stream.
 
-## The 3 steps (tool: `viewer-projects/17_stream_parts`)
+## The 3 steps (tool: Stream Parts)
 Install once: Python, `pip install yt-dlp`, [Node.js](https://nodejs.org), [ffmpeg](https://ffmpeg.org).
 1. **Link → 20 parts with my prompt on top** (4.6 seconds for Carry's 9h45m):
    `python parts.py "https://www.youtube.com/live/irNhWMG560k" --parts 20 --creator CarryMinati --handle carryminati --caption-lang Hinglish`

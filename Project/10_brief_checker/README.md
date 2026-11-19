@@ -1,6 +1,5 @@
-# 10 · Brief Checker (post se pehle check karo)
-
-Reel: @confuse__coder.dev DEV 10 · "MrBeast clip = ₹0? Clipping ka asli hisaab"
+# Brief Checker (rule validation + earnings)
+*@confuse__coder.dev · DEV 10 (MrBeast clip = ₹0? Clipping ka asli hisaab) ka project*
 
 Clipping platforms (jaise Vyro) brand ke video ke clips pe **per view** paisa dete hain. Par post tabhi paisa banata hai
 jab wo campaign ke **brief** ke rules follow kare: sahi source video, sahi length, vertical, `#ad` disclosure, no watermark.

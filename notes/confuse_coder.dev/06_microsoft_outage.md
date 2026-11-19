@@ -1,5 +1,7 @@
-# Microsoft 36 ghante down: what actually happened (Nov 12–14, 2026)
+# Microsoft 36-hour outage: what actually happened (Nov 12–14, 2026)
 *@confuse__coder.dev · DEV 06*
+
+---
 
 ## Kya hua (timeline)
 - **Nov 12, ~17:00–18:00 UTC (≈ 10:30–11:30 PM IST):** Outlook / Exchange Online down, then Teams, Copilot, SharePoint, OneDrive affected.

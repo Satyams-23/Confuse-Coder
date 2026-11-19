@@ -1,5 +1,5 @@
-# Machine kaise seekhti hai? Notes
-*@confuse__coder.dev · AI/ML Season 1 · EP01 · Comment "NOTES" → ye notes DM mein*
+# Machine kaise seekhti hai?
+*@confuse__coder.dev · AI/ML EP 01*
 
 ---
 
@@ -74,8 +74,8 @@ Same loop! Bas:
 
 ---
 
-## 7. Project 🛠️
-**viewer-projects/05_auto_fare_learner**: `train_step()` likho (~6 lines). Tumhara model khud ₹15/km + ₹25 dhoondhega, aur ek doosre shehar ka rule bhi.
+## 7. Project
+**[Auto Fare Learner](https://www.confuse-coder.site/projects/05_auto_fare_learner)**: `train_step()` likho (~6 lines). Tumhara model khud ₹15/km + ₹25 dhoondhega, aur ek doosre shehar ka rule bhi.
 
 ## 8. Practice
 1. 20 km ka fare is model se? (answer: pinned comment mein)

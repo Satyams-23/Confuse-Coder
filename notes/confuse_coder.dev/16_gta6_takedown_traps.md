@@ -1,4 +1,7 @@
-# GTA 6 clips: 3 takedown traps (DEV 16)
+# GTA 6 clips: 3 takedown traps
+*@confuse__coder.dev · DEV 16*
+
+---
 
 Checked 19 Nov 2026 on Rockstar's own page: [Policy on posting copyrighted Rockstar Games material](https://support.rockstargames.com/articles/7bNaeoMFTV0iUDGhStTXvz/policy-on-posting-copyrighted-rockstar-games-material) (last updated 10 Jan 2025; it doesn't name GTA 6, it covers all Rockstar games).
 

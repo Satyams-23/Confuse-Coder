@@ -1,5 +1,5 @@
-# Graphs EP 03 · DFS (Depth First Search) · Number of Islands
-*@confuse__coder · Graphs season EP 03 · Comment "NOTES" → ye notes + Island Counter project DM mein*
+# DFS + Number of Islands
+*@confuse__coder · Graphs EP 03*
 
 ---
 
@@ -122,7 +122,7 @@ Island A = 3 khaane, count = 1
 - **733** Flood Fill (paint bucket tool = DFS)
 
 ## Project: Island Counter
-`viewer-projects/13_island_counter/` · Python + C++ · tum likhoge sirf `dfs()` · 9 tests (2 tests donut bug pakadte hain) · bonus: apni satellite photo ke islands gino (`--image`).
+[Island Counter](https://www.confuse-coder.site/projects/13_island_counter) · Python + C++ · tum likhoge sirf `dfs()` · 9 tests (2 tests donut bug pakadte hain) · bonus: apni satellite photo ke islands gino (`--image`).
 
 ## Pinned quiz
 Isi map pe sirf `r < 0` bhool jao (`c < 0` check hai). Code kitne islands bolega? (Answer next reel mein.)

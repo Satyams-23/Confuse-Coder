@@ -1,4 +1,7 @@
-# Claude × Instagram: Starter Kit (DEV 13)
+# Claude × Instagram: starter kit
+*@confuse__coder.dev · DEV 13*
+
+---
 
 Checked live on 18 Nov 2026. Connector menus change often, so if a step looks different, look for the same words.
 

@@ -1,6 +1,5 @@
-# 12 · Mini Clipper (apna free AI clipping tool)
-
-Reel: @confuse__coder.dev DEV 12 · "7 free AI clipping tools → sach mein free: 2"
+# Mini Clipper (sliding window + greedy top-k)
+*@confuse__coder.dev · DEV 12 (7 free AI clipping tools → sach mein free: 2) ka project*
 
 OpusClip, Vizard, OpenShorts, AutoClip... sab andar se same 4 kaam karte hain:
 

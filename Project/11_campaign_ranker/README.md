@@ -1,6 +1,5 @@
-# 11 · Campaign Ranker (GTA 6 ke peeche bhaagne se pehle hisaab)
-
-Reel: @confuse__coder.dev DEV 11 · "GTA 6 clips = $1,000? Asli: $35"
+# Campaign Ranker (payout caps + stable sort)
+*@confuse__coder.dev · DEV 11 (GTA 6 clips = $1,000? Asli: $35) ka project*
 
 Clipping campaigns per 1,000 views paisa dete hain, par teen cheezein kamai kaat deti hain:
 1. **Max payout per clip**: GTA 6 wala campaign ek clip pe max $35 deta hai, views kitne bhi hon.

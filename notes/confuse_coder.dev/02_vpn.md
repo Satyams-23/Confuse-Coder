@@ -1,5 +1,5 @@
-# VPN asal mein kaise kaam karta hai? — Notes
-*@confuse__coder.dev · Reel 02 · Comment "VPN" → ye notes DM mein*
+# VPN asal mein kaise kaam karta hai?
+*@confuse__coder.dev · DEV 02*
 
 ---
 

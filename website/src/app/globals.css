@@ -58,6 +58,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -67,6 +68,7 @@ body {
   font-family: var(--font-grotesk), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
   transition: background 0.3s;
 }
 

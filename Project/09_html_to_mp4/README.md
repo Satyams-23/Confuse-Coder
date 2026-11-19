@@ -1,6 +1,5 @@
-# 09 · HTML → MP4 (time rok ke photo kheencho)
-
-Reel: @confuse__coder.dev DEV 09 · "₹20,000 vs ₹0: Claude se motion graphics"
+# HTML → MP4 (frame-by-frame renderer)
+*@confuse__coder.dev · DEV 09 (Claude se motion graphics, ₹0) ka project*
 
 Claude (free plan bhi) tumhe animation **HTML** mein deta hai. Instagram/YouTube ko **MP4** chahiye.
 Screen record karoge toh slow laptop pe frames drop honge. Is project mein tum ek renderer likhoge jo

@@ -1,5 +1,5 @@
-# Graphs EP 02 · BFS (Breadth First Search)
-*@confuse__coder · Graphs season EP 02 · Comment "NOTES" → ye notes + Referral Finder project DM mein*
+# BFS (Breadth First Search)
+*@confuse__coder · Graphs EP 02*
 
 ---
 
@@ -98,7 +98,7 @@ q=[Kabir, Meera]   → Kabir nikla: Tara(3)
 - **127** Word Ladder (har word = node)
 
 ## Project: Referral Finder
-`viewer-projects/07_referral_finder/` · Python + C++ · tum likhoge `bfs()` + `get_path()` · 9 tests.
+[Referral Finder](https://www.confuse-coder.site/projects/07_referral_finder) · Python + C++ · tum likhoge `bfs()` + `get_path()` · 9 tests.
 
 ## Pinned quiz
 Isi graph mein **Kabir** ke liye Aditi kaunsa connection? (Answer next reel mein.)

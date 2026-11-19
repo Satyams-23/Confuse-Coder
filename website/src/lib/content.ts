@@ -22,6 +22,9 @@ export type Note = {
   file: string;
 };
 
+/** Reels whose DM keyword isn't "NOTES" (notes files no longer carry the "Comment X" line). */
+const KEYWORD_OVERRIDE: Record<string, string> = { "confuse_coder.dev/02_vpn.md": "VPN" };
+
 /** Season order per sub-folder (root = first season). Newer seasons sort above older ones. */
 const SERIES_RANK: Record<string, number> = { "": 0, graphs: 1, aiml: 1 };
 
@@ -98,7 +101,7 @@ export function getNotes(): Note[] {
           ep,
           title,
           excerpt: firstParagraph(lines),
-          keyword: kw?.[1] ?? "NOTES",
+          keyword: KEYWORD_OVERRIDE[`${account}/${f}`] ?? kw?.[1] ?? "NOTES",
           series: sub,
           order: (SERIES_RANK[sub] ?? 1) * 1000 + ep,
           file,
@@ -125,7 +128,7 @@ export function getProjects(): Project[] {
       return {
         slug,
         ep: parseInt(slug, 10),
-        title: m ? m[1] : h1,
+        title: (m ? m[1] : h1).replace(/^\d+\s*[·:.\-–—]\s*/, ""),
         concept: m ? m[2] : "",
         pitch: stripMd(pitchLine ?? ""),
         languages: readDir(path.join(dir, slug)).filter((d) => d === "python" || d === "cpp").map((d) => (d === "cpp" ? "C++" : "Python")),
@@ -157,4 +160,58 @@ export function getNote(seg: string, slug: string): (Note & { markdown: string }
   if (!note) return null;
   const markdown = fs.readFileSync(path.join(REEL_ROOT, "notes", account, note.file), "utf8");
   return { ...note, markdown };
+}
+
+/* ───────── GitHub links (public repo only) ───────── */
+
+export const GITHUB_REPO = "https://github.com/Satyams-23/Confuse-Coder";
+
+// On Vercel the site builds from the public repo itself (notes/ and Project/ sit next to website/).
+// Locally it runs from private/, whose public mirror is ../public. A link is shown only when the
+// file really exists there, so nothing private (or not yet synced) gets a broken link.
+const PUBLIC_ROOT = fs.existsSync(path.join(REEL_ROOT, "Project")) ? REEL_ROOT : path.resolve(REEL_ROOT, "..", "public");
+
+function githubIfPublic(rel: string, kind: "blob" | "tree"): string | null {
+  return fs.existsSync(path.join(PUBLIC_ROOT, rel)) ? `${GITHUB_REPO}/${kind}/main/${rel.split(path.sep).join("/")}` : null;
+}
+
+export function noteGithub(n: Pick<Note, "account" | "file">): string | null {
+  return githubIfPublic(`notes/${n.account}/${n.file}`, "blob");
+}
+
+export function projectGithub(slug: string): string | null {
+  return githubIfPublic(`Project/${slug}`, "tree");
+}
+
+/* ───────── Project detail ───────── */
+
+export type ProjectFile = { path: string; role: "starter" | "solution" | "ready" | "doc" };
+
+export function getProject(slug: string): (Project & { markdown: string; files: ProjectFile[] }) | null {
+  if (!/^\d+_[\w-]+$/.test(slug)) return null;
+  const project = getProjects().find((p) => p.slug === slug);
+  if (!project) return null;
+  const dir = PROJECT_DIRS.find((d) => fs.existsSync(path.join(d, slug, "README.md")))!;
+  const root = path.join(dir, slug);
+  const files: ProjectFile[] = [];
+  const walk = (rel: string) => {
+    for (const f of readDir(path.join(root, rel)).sort()) {
+      const r = rel ? `${rel}/${f}` : f;
+      if (f.startsWith(".") || f === "node_modules" || f === "__pycache__") continue;
+      if (fs.statSync(path.join(root, r)).isDirectory()) walk(r);
+      else
+        files.push({
+          path: r,
+          role: /starter/i.test(f) ? "starter" : /solution/i.test(f) ? "solution" : /\.md$/i.test(f) ? "doc" : "ready",
+        });
+    }
+  };
+  walk("");
+  return { ...project, markdown: fs.readFileSync(path.join(root, "README.md"), "utf8"), files };
+}
+
+/** "@confuse__coder · Graphs EP 03 (DFS / Number of Islands) ka project" → the reel line under the H1. */
+export function projectReelLine(markdown: string): string {
+  const l = markdown.split(/\r?\n/).find((x) => /^\*.+\*$/.test(x.trim()));
+  return l ? stripMd(l.trim().replace(/^\*|\*$/g, "")) : "";
 }

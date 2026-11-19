@@ -1,5 +1,5 @@
-# ₹8 ka bill: mera code 6 tareeke, sahi 3 (Combination Sum): Notes
-*@confuse__coder · Recursion EP 13 · Comment "NOTES" → ye notes + UPI Change Maker project + practice questions DM mein*
+# Combination Sum
+*@confuse__coder · Recursion EP 13 · Reel: ₹8 ka bill: mera code 6 tareeke, sahi 3*
 
 ---
 
@@ -115,6 +115,6 @@ Agar coins `[2, 3, 3, 5]` hain aur har coin **sirf ek baar** use ho sakta hai:
 
 ## 9. Project: UPI Change Maker
 Bill aur coins do, saare tareeke print karo + shopkeeper ka favourite (kam se kam coins). Sirf `backtrack()` khud likho (~10 lines). Python + C++, starter + solution + tests.
-→ `viewer-projects/03_upi_change_maker/`
+→ [UPI Change Maker](https://www.confuse-coder.site/projects/03_upi_change_maker)
 
 **Next:** Word Search: grid pe backtracking (Recursion season ka last episode).

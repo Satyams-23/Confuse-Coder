@@ -1,5 +1,5 @@
-# Grid mein 'ABCB' hai? Mera code: haan. Sahi: nahi (Word Search): Notes
-*@confuse__coder · Recursion EP 14 (season finale) · Comment "NOTES" → ye notes + Word Puzzle Solver project + Recursion revision sheet DM mein*
+# Word Search
+*@confuse__coder · Recursion EP 14 · Reel: Grid mein 'ABCB' hai? Mera code: haan. Sahi: nahi*
 
 ---
 
@@ -124,6 +124,6 @@ Alag `visited[][]` array bhi chalega. `#` trick bas extra memory bachata hai.
 
 ## 9. Project: Newspaper Word Puzzle Solver
 Letter grid + word list. Har word ka raasta grid pe highlight karke print karo. Sirf `dfs()` khud likho (~15 lines). Python + C++, starter + solution + tests.
-→ `viewer-projects/04_word_puzzle_solver/`
+→ [Newspaper Word Puzzle Solver](https://www.confuse-coder.site/projects/04_word_puzzle_solver)
 
 **Next season: Graphs.** Aur ye Word Search asal mein graph ka **DFS** hi tha: har khaana ek node, chaaron padosi uske edges.

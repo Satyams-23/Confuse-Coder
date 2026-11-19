@@ -1,5 +1,5 @@
-# 4 Queens, 1 board = kitne tareeke? (N-Queens, Backtracking): Notes
-*@confuse__coder · Recursion EP 10 · Comment "NOTES" → ye notes DM mein*
+# N-Queens (Backtracking)
+*@confuse__coder · Recursion EP 10 · Reel: 4 Queens, 1 board = kitne tareeke?*
 
 ---
 

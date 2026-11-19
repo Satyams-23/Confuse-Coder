@@ -1,4 +1,7 @@
-# Apna Instagram MCP (DEV 14)
+# Apna Instagram MCP (read-only)
+*@confuse__coder.dev · DEV 14*
+
+---
 
 A 40-line, **read-only** MCP server that lets Claude read your Instagram stats straight from Meta's official API. No third-party company in between.
 

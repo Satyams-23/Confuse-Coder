@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Float, Lightformer, RoundedBox } from "@react-three/drei";
-import { useMemo, useRef, type MutableRefObject, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type MutableRefObject, type ReactNode } from "react";
 import * as THREE from "three";
 import type { Theme } from "./ThemeProvider";
 
@@ -250,8 +250,26 @@ function Dust() {
 }
 
 export default function HeroScene({ clear, theme }: { clear: boolean; theme: Theme }) {
+  // Phones: lower pixel ratio, no MSAA, and stop drawing once the hero scrolls away.
+  const [lite] = useState(() => typeof window !== "undefined" && window.matchMedia("(max-width: 820px), (hover: none)").matches);
+  const [visible, setVisible] = useState(true);
+  const host = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = host.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting));
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <Canvas camera={{ position: [0, 0, 7.4], fov: 38 }} dpr={[1, 2]} gl={{ alpha: true, antialias: true }}>
+    <div ref={host} style={{ position: "absolute", inset: 0 }}>
+    <Canvas
+      camera={{ position: [0, 0, 7.4], fov: 38 }}
+      dpr={lite ? [1, 1.5] : [1, 2]}
+      gl={{ alpha: true, antialias: !lite, powerPreference: lite ? "low-power" : "default" }}
+      frameloop={visible ? "always" : "never"}
+    >
       {theme === "cc" ? (
         <>
           <ambientLight intensity={0.25} />
@@ -274,5 +292,6 @@ export default function HeroScene({ clear, theme }: { clear: boolean; theme: The
         <Logo clear={clear} theme={theme} />
       </Float>
     </Canvas>
+    </div>
   );
 }

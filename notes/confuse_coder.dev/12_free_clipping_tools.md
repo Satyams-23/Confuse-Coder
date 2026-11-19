@@ -1,4 +1,7 @@
-# DEV 12 · 7 "free" AI clipping tools → sach mein free: 2
+# Free AI clipping tools: kaunse sach mein free hain
+*@confuse__coder.dev · DEV 12 · Reel: 7 "free" AI clipping tools → sach mein free: 2*
+
+---
 
 > Live check: 17 Nov 2026, har tool ka official pricing / help / GitHub page. Plans badalte rehte hain, use karne se pehle page khud kholo.
 
@@ -40,7 +43,7 @@
 4. **FFmpeg**: captions burn + clip cut
 
 ## Project: 12_mini_clipper (apna clipper)
-`viewer-projects/12_mini_clipper` (Python + FFmpeg + faster-whisper)
+[Mini Clipper](https://www.confuse-coder.site/projects/12_mini_clipper) (Python + FFmpeg + faster-whisper)
 ```
 pip install faster-whisper numpy      # ffmpeg PATH pe
 python test.py                         # pehle FAILED

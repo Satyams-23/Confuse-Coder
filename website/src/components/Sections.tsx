@@ -127,7 +127,7 @@ export function NotesBento({ notes }: { notes: Note[] }) {
           </label>
         </motion.div>
 
-        <div className="bento">
+        <div className={`bento ${q.trim() ? "" : "trim"}`}>
           {list.map((n, i) => (
             <motion.article
               key={n.account + n.slug}
@@ -156,6 +156,9 @@ export function NotesBento({ notes }: { notes: Note[] }) {
           ))}
           {!list.length && <p className="mono empty">Is topic pe abhi reel nahi bani. Comment karke batao 👀</p>}
         </div>
+        <Link href="/notes" className="btn btn-ghost notes-all">
+          Saare {notes.length} notes dekho <span className="arrow">→</span>
+        </Link>
       </div>
       <style>{`
         .notes-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
@@ -189,8 +192,14 @@ export function NotesBento({ notes }: { notes: Note[] }) {
         [data-theme=dev] .note-foot{color:#111;border-top:2px dashed #111}
         .soon{color:var(--accent)}[data-theme=dev] .soon{color:#111;font-weight:700}
         .empty{color:var(--muted);grid-column:1/-1}
+        .notes-all{margin-top:24px}
         @media (max-width:960px){.bento{grid-template-columns:repeat(2,1fr)}.note.big{min-height:340px}}
-        @media (max-width:560px){.bento{grid-template-columns:1fr}.note.big{grid-column:auto;grid-row:auto}.search{min-width:0;width:100%}}
+        @media (max-width:560px){
+          .bento{grid-template-columns:1fr;gap:12px;margin-top:32px}
+          .note{min-height:0}.note.big{grid-column:auto;grid-row:auto;min-height:300px}
+          .bento.trim .note:nth-child(n+6){display:none}
+          .search{min-width:0;width:100%}
+        }
       `}</style>
     </section>
   );
@@ -370,13 +379,18 @@ export function Projects({ projects }: { projects: Project[] }) {
           </p>
         </motion.div>
 
+        <p className="proj-swipe mono">← swipe karo · {projects.length} projects →</p>
         <div className="proj-grid">
           {projects.map((p, i) => (
             <motion.article key={p.slug} className="card hoverable proj" {...reveal} transition={{ ...reveal.transition, delay: i * 0.1 }}>
               <div className="proj-no display">{String(p.ep).padStart(2, "0")}</div>
               <div className="proj-body">
                 <span className="mono proj-concept">{p.concept}</span>
-                <h3>{p.title}</h3>
+                <h3>
+                  <Link href={`/projects/${p.slug}`} className="proj-link">
+                    {p.title}
+                  </Link>
+                </h3>
                 <p>{p.pitch}</p>
                 <div className="proj-files mono">
                   <span>starter ✎</span>
@@ -392,6 +406,7 @@ export function Projects({ projects }: { projects: Project[] }) {
             </motion.article>
           ))}
           <motion.article className="card proj next" {...reveal}>
+            <Link href="/projects" className="proj-link" aria-label="See all projects" />
             <div className="proj-no display">+</div>
             <div className="proj-body">
               <span className="mono proj-concept">next reel</span>
@@ -400,8 +415,12 @@ export function Projects({ projects }: { projects: Project[] }) {
             </div>
           </motion.article>
         </div>
+        <Link href="/projects" className="btn btn-ghost proj-all">
+          Saare {projects.length} projects dekho <span className="arrow">→</span>
+        </Link>
       </div>
       <style>{`
+        .proj-swipe{display:none;margin:28px 0 0;font-size:12px;color:var(--muted)}
         .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
         .proj{padding:26px;display:flex;flex-direction:column;gap:18px}
         .proj-no{font-size:72px;color:transparent;-webkit-text-stroke:1.5px var(--accent);line-height:1}
@@ -415,9 +434,18 @@ export function Projects({ projects }: { projects: Project[] }) {
         [data-theme=dev] .proj-files span{border:2px solid #111;color:#111;border-radius:6px;background:#fff}
         .proj-files .lang{color:var(--fg);border-color:var(--accent)}
         [data-theme=dev] .proj-files .lang{background:var(--accent)}
+        .proj{position:relative}
+        .proj-link{color:inherit;text-decoration:none}.proj-link::after{content:"";position:absolute;inset:0}
+        .proj-all{display:inline-flex;margin-top:22px}
         .proj.next{border-style:dashed}
         [data-theme=dev] .proj.next{background:var(--accent-2);border-style:solid}
-        @media (max-width:960px){.proj-grid{grid-template-columns:1fr}}
+        @media (max-width:960px){
+          .proj-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:40px -16px 0;padding:4px 16px 18px;scrollbar-width:none}
+          .proj-grid::-webkit-scrollbar{display:none}
+          .proj{flex:0 0 82%;scroll-snap-align:center;opacity:1!important;transform:none!important}
+          [data-theme=dev] .proj{flex-basis:78%}
+          .proj-swipe{display:block}
+        }
       `}</style>
     </section>
   );

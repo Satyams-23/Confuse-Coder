@@ -1,5 +1,5 @@
-# 3 dost, 1 photo = kitne pose? (Permutations): Notes
-*@confuse__coder · Recursion EP 09 · Comment "NOTES" → ye notes DM mein*
+# Permutations
+*@confuse__coder · Recursion EP 09 · Reel: 3 dost, 1 photo = kitne pose?*
 
 ---
 
