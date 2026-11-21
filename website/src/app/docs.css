@@ -565,3 +565,68 @@
     color: #111;
   }
 }
+
+/* /r/jobs */
+.d-row.d-job {
+  grid-template-columns: 1fr auto;
+  align-items: start;
+}
+.d-job-via {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font: 12px var(--font-mono);
+  color: var(--d-link);
+}
+.d-job-via svg {
+  width: 12px;
+  height: 12px;
+}
+.d-job-when {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
+}
+.d-due {
+  font: 600 12.5px var(--font-mono);
+  color: #c0262d;
+  white-space: nowrap;
+}
+.d-roll {
+  font: 12px var(--font-mono);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.d-status {
+  font: 11px var(--font-mono);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--d-line);
+  color: var(--muted);
+}
+.d-status.confirmed {
+  color: #16794a;
+  border-color: color-mix(in srgb, #16794a 40%, transparent);
+}
+.d-safe {
+  margin-top: 28px;
+}
+.d-job-foot {
+  margin-top: 36px;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+@media (max-width: 640px) {
+  .d-row.d-job {
+    grid-template-columns: 1fr;
+  }
+  .d-job-when {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
