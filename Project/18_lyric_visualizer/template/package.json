@@ -1,0 +1,25 @@
+{
+  "name": "lyric-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hand-drawn kinetic lyric video (made with the lyric-visualizer Claude skill)",
+  "scripts": {
+    "preview": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.540",
+    "@remotion/cli": "4.0.540",
+    "@remotion/google-fonts": "4.0.540",
+    "@remotion/noise": "4.0.540",
+    "@remotion/paths": "4.0.540",
+    "@remotion/renderer": "4.0.540",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.540"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.0",
+    "typescript": "5.9.3"
+  }
+}

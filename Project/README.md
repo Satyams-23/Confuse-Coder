@@ -17,6 +17,7 @@ Sirf dekho mat, **banao**. Har project ka boilerplate ready hai; tum sirf woh co
 | 12 | [Mini Clipper](12_mini_clipper/) | @confuse__coder.dev · DEV 12 · free AI clipping tools | Sliding window + top-k no overlap, Whisper + FFmpeg | Python |
 | 13 | [Island Counter](13_island_counter/) | Graphs EP 03 · DFS / Number of Islands | Grid DFS flood fill, bounds check (Python -1 trap) | Python + C++ |
 | 17 | [Stream Parts](17_stream_parts/) | @confuse__coder.dev · DEV 18 · Carry ka 9 ghante ka GTA 6 stream → clips | Split by time (not line count), prompt per part, yt-dlp sections + FFmpeg 9:16 | Python |
+| 18 | [Lyric Visualizer](18_lyric_visualizer/) | @confuse__coder.dev · DEV 24 · 1 Claude skill = ye lyric video | Claude skill: forced alignment (Whisper + demucs), theme + style per song, Remotion springs | Claude skill (Node + Python) |
 | — | [Diwali Card Generator](diwali-site/) | @confuse__coder.dev | HTML + Canvas | Web |
 
 ## Kaise use karein

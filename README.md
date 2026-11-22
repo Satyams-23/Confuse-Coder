@@ -65,6 +65,7 @@ The projects in [`Project/`](Project/) put each concept into a small real-world 
 | 12 | [Mini Clipper](Project/12_mini_clipper/) | Your own free AI clipper: Whisper + sliding-window moment picker + FFmpeg | Python |
 | 13 | [Island Counter](Project/13_island_counter/) | Count islands with DFS flood fill, paint each one, count your own satellite photo | Python, C++ |
 | 17 | [Stream Parts](Project/17_stream_parts/) | Long stream to AI-ready transcript parts with a prompt, then finished 9:16 clips (facecam on top, captions, credit) | Python |
+| 18 | [Lyric Visualizer](Project/18_lyric_visualizer/) | Claude skill: song + lyrics → word-synced animated lyric video (Hindi supported), theme and style per song | Claude skill (Node + Python) |
 | — | [Diwali Card Generator](Project/diwali-site/) | Client-side canvas rendering | HTML, JavaScript |
 
 **How to use a project**
