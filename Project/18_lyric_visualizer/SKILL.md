@@ -86,6 +86,12 @@ One file per line in `src/scenes/LineNN.tsx`, registered in `src/scenes/index.ts
 | `<SketchPath d=...>` | double sketchy outline + self-drawing stroke |
 | `<KineticLine words=...>` | word-on-timestamp typography, key word accent + self-drawing underline + punch |
 | `<Transition kind="wipe"\|"iris"\|"ink">` | scene entrance; `morph()` for shape→shape |
+| `{kind: 'zoom', at: [x,y]}` transition | zoom THROUGH an object: the old scene dives into an eye's iris / a rose's centre / a window and the new scene grows out of it (story mode) |
+| `{kind: 'paint'}` transition, `<PaintReveal>` | the new scene / a colour is painted on with big brush strokes (a wall turning blue, colour flooding a sketch) |
+| `<Bloom points start dur>` | a vine grows along a path, leaves unfold, flowers spring open one by one (flowers spreading over a house, a garland, a rose bush) |
+| `<SparkTrail from to start dur>` | glowing sparkle ribbon flying from A to B (words leaving a mouth, a wish going to someone) |
+| `<StoryImage src focus>` | full-bleed illustration/photo with a slow move toward the thing the lyric names |
+| `<CornerLyric words corner color>` | small lyric in a corner, word by word, coloured from the scene (story mode: the picture is the hero) |
 
 Every major motion hit (impact, snap, jump) also goes in `hits.json` (`[{"t": 1.5, "label": "coin lands"}]`, seconds), so `waveform_check.py` can show whether it lands on a beat or word.
 
@@ -116,8 +122,23 @@ Theme = colours + mood. Style = drawing + motion language. Any style works with 
 | **Kinetic poster (type only)** | rap, fast songs, motivation, anger | no illustrations: giant words, grids, split screens, hard cuts ON beats, `WordFlood`, `SpiralText`, words stacking/falling, bold sans + serif contrast |
 | **Cinematic 3D** | epic, big chorus, journey | `@remotion/three` (three.js) paper planes / low-poly worlds, camera dolly, lights synced to beats; tasteful, never toy-like |
 | **Rough sketch / storyboard** | storytelling verses, comedy | `roughjs` shapes (sloppy boxes/circles, hachure), storyboard panels, arrows and hand notes |
+| **Illustrated story** | romantic, folk, nostalgic, ghazal, any song with drawable nouns | see "Story mode" below: painted scenes that show each lyric literally, things grow, zoom-through transitions, small corner lyrics |
 
 Every style still follows ALL animation quality rules (springs/easing only, timestamp-exact words, camera drift + parallax, no plain fades, safe zones). Mixing is fine inside one song only when the lyric's mood turns (like a theme switch), and the switch itself is a designed transition.
+
+## Story mode (illustrated story reels)
+Reference look the user liked: every line becomes a small painted scene that SHOWS the words. Don't copy any reel; use the ideas.
+- **Literal first.** Underline the drawable nouns/verbs in each line and show them: *ghar* → a house, *neele rang* → a wall being painted blue, *dua* → a diya in cupped hands, *khat* → a letter, *neele phool* → an eye whose iris is blue flowers, then a field of them. Only go symbolic when nothing is drawable.
+- **Something grows or changes in every scene**, timed to the words: flowers spread over the roof (`Bloom`), paint covers a wall (`PaintReveal`), a diya lights, petals fall, a sparkle flies from one person to another (`SparkTrail`), a cloth flutters. A still picture with a slow zoom is not enough.
+- **Transitions go THROUGH an object** (`{kind:'zoom', at}`): into an eye, a flower's centre, a window, a diya flame, a moon. Or the next scene is painted on (`{kind:'paint'}`), or flowers grow until they fill the frame and become the next scene.
+- **One painting style for the whole song**, chosen from the mood: Indian miniature (Rajasthani/Mughal: flat colour, gold borders, arches, profile faces) for classical/romantic Hindi songs, soft watercolour for rain/longing, paper cut-out for folk/childhood, glowing silhouettes for sad night songs. Keep a recurring couple/character and colour so it feels like one story.
+- **Lyrics small, in a corner** (`CornerLyric`), word by word on the timestamps, coloured from the scene (blue Devanagari on the blue-house scene, gold on dark scenes). One giant key word at most once or twice per song.
+- **Optional real-life moments** fit this mode too: a phone showing a chat or the song's lyrics, a hand writing the letter.
+
+How to make the pictures (pick per song, tell the user which):
+1. **Code-painted** (default, free): layered flat SVG shapes with light/shade planes, the `#ink` edge filter, paper texture, `Bloom`/`PaintReveal`/`SparkTrail` for motion. Reference: `template/src/scenes/demo/StoryScenes.tsx` (house → flowers bloom → zoom through window → wall painted blue).
+2. **Free licensed art**: CC0 illustrations/photos (see External resources) used as `StoryImage` layers, cut into fg/bg layers for parallax, recoloured to one palette, with code-drawn growth and sparkles on top.
+3. **AI-generated images/clips** (best match for detailed painted characters): only if the user has an image/video tool (an MCP server or their own account). Write `prompts.md` with one prompt per line (same style words, same characters, same palette in every prompt, aspect 9:16, what moves in the clip), the user generates or you call the tool, save to `public/assets/gen/`, then build the scene around them: `StoryImage` + code growth + `CornerLyric` + zoom/paint transitions, all synced to the words. Ask before any paid generation. Never generate real people, celebrities or copyrighted characters.
 
 ## External resources (download when it makes the video better)
 Code-drawn SVG is the default. When a real library or asset would clearly look or move better (complex characters, organic brush strokes, 3D, detailed props, textures), download it. Free + license-safe items need no permission; ASK the user before anything paid or needing a sign-up.
@@ -134,7 +155,7 @@ Code-drawn SVG is the default. When a real library or asset would clearly look o
 - Vector art and icons: Open Peeps / Open Doodles (CC0 hand-drawn people), SVG Repo (check each file's license), Lucide / Tabler / Phosphor (MIT), unDraw (free license), OpenMoji (CC BY-SA, credit)
 - Animations: LottieFiles free animations (Lottie Simple License); recolour the JSON to the theme
 - Textures, HDRIs, 3D models: Poly Haven (CC0), Kenney (CC0), Quaternius (CC0), Sketchfab (CC0 / CC-BY filter only, credit)
-- Photos only as texture overlays (paper, grain, dust): Unsplash / Pexels (free license)
+- Photos as texture overlays (paper, grain, dust) and, in story mode, as scene layers: Unsplash / Pexels (free license)
 - Inspiration only (look, never copy): Pinterest, Behance, Dribbble, motion-design reels. Study timing, composition, transitions.
 
 **Rules for anything downloaded:**

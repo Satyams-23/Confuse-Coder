@@ -22,7 +22,7 @@ Claude follows `SKILL.md`:
 
 1. Creates `lyric-videos/<song>/` from `template/` (then `npm install` once).
 2. Aligns your lyrics to the song with word timestamps (`phrases.json`) and finds the beats (`beats.json`).
-3. Writes `creative_direction.md`: a **theme** picked from the lyrics' mood (5 presets or custom), a **style** (glow line-art, ink brush, chalk, paper cut-out, watercolour, neon, kinetic poster, 3D, …) that doesn't repeat your last songs, and one metaphor per line.
+3. Writes `creative_direction.md`: a **theme** picked from the lyrics' mood (5 presets or custom), a **style** (glow line-art, ink brush, chalk, paper cut-out, watercolour, neon, kinetic poster, 3D, illustrated story, …) that doesn't repeat your last songs, and one metaphor per line.
 4. Builds **one scene**, renders 5 sample frames and waits for your OK on the look.
 5. Renders a **20-second test clip** and waits for your OK.
 6. Renders the full video and outputs `out/final.mp4`.
@@ -56,6 +56,7 @@ scripts/                     check_env, new_project, align, beats, waveform_chec
 template/src/lib/anim.ts     springIn, ease, drawStroke, punchWord, cameraDrift, dropBounce, overshootRotate, beatPulse
 template/src/lib/*.tsx       Paper/FilmGrain/Vignette, Camera+Layer parallax, KineticLine, SketchPath, Transition
 template/src/scenes/demo/    two reference scenes: coin drops into a hand, then match-cut into a clock
+                             + story mode: flowers bloom over a house, zoom through the window, wall painted blue
 examples/                    creative direction example
 ```
 

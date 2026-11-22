@@ -26,7 +26,7 @@ export const LyricVideo: React.FC = () => {
             <Sequence key={i} from={slot.from} durationInFrames={slot.dur} name={`L${i} ${slot.line.text.slice(0, 24)}`}>
               <ThemeCtx.Provider value={theme}>
                 <Transition spec={spec}>
-                  <OutPush dur={slot.dur} amount={i === slots.length - 1 ? 0 : 0.05}>
+                  <OutPush dur={slot.dur} amount={i === slots.length - 1 ? 0 : 0.05} next={TRANSITIONS[i + 1]}>
                     <Stage />
                     <Scene {...slot} />
                   </OutPush>

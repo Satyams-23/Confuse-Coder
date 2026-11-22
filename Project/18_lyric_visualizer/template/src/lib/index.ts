@@ -9,3 +9,4 @@ export * from './Transition';
 export * from './theme';
 export * from './Stage';
 export * from './Type';
+export * from './Story';
