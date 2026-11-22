@@ -630,3 +630,94 @@
     justify-content: flex-start;
   }
 }
+
+/* ───────── Season boxes (notes index) ───────── */
+.d-seasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.d-season {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--d-line);
+  border-radius: 14px;
+  background: var(--d-soft);
+  overflow: hidden;
+}
+.d-season-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px 14px;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--d-line);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+.d-season-handle {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+}
+.d-season-name {
+  font-size: 22px;
+  font-weight: 700;
+}
+.d-season-head:hover .d-season-name {
+  color: var(--d-link);
+}
+.d-season-meta {
+  font-size: 13px;
+  opacity: 0.65;
+}
+.d-season-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  flex: 1;
+}
+.d-season-list a {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 7px 20px;
+  color: inherit;
+  text-decoration: none;
+}
+.d-season-list a:hover .d-season-t {
+  color: var(--d-link);
+}
+.d-season-list .d-ep {
+  flex: none;
+  font-size: 12px;
+}
+.d-season-t {
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.d-season-more,
+.d-back {
+  background: none;
+  border: 0;
+  color: var(--d-link);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+.d-season-more {
+  padding: 12px 20px 16px;
+  border-top: 1px solid var(--d-line);
+}
+.d-back {
+  padding: 0;
+  margin-bottom: 14px;
+}

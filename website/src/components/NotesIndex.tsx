@@ -14,12 +14,13 @@ export type NoteRow = {
   keyword: string;
 };
 
-const SEASON_NAME: Record<string, string> = { "": "Season 1", graphs: "Graphs", aiml: "AI / ML" };
+const SEASON_NAME: Record<string, string> = { "": "Recursion", graphs: "Graphs", aiml: "AI / ML" };
 
 export function NotesIndex({ notes }: { notes: NoteRow[] }) {
   const { theme } = useTheme();
   const [tab, setTab] = useState<"all" | "dsa" | "dev" | null>(null);
   const [q, setQ] = useState("");
+  const [open, setOpen] = useState<string | null>(null);
   // Until the visitor picks a tab, show the account whose theme they're on.
   const active = tab ?? (theme === "dev" ? "dev" : "dsa");
 
@@ -39,11 +40,16 @@ export function NotesIndex({ notes }: { notes: NoteRow[] }) {
         (acc === "dev" ? "@confuse__coder.dev" : "@confuse__coder") +
         " · " +
         (acc === "dev" && !season ? "Dev explainers" : SEASON_NAME[season] ?? season);
-      return { key, label, rows };
+      const name = acc === "dev" && !season ? "Dev explainers" : SEASON_NAME[season] ?? season;
+      const handle = acc === "dev" ? "@confuse__coder.dev" : "@confuse__coder";
+      const eps = rows.map((r) => r.ep).sort();
+      return { key, label, name, handle, rows, range: eps.length > 1 ? `${eps[0]} – ${eps[eps.length - 1]}` : eps[0] };
     });
   }, [notes, active, q]);
 
   const count = (a: "all" | "dsa" | "dev") => notes.filter((n) => a === "all" || n.account === a).length;
+  const searching = q.trim().length > 0;
+  const openGroup = groups.find((g) => g.key === open) ?? null;
   const total = groups.reduce((t, g) => t + g.rows.length, 0);
 
   return (
@@ -51,7 +57,7 @@ export function NotesIndex({ notes }: { notes: NoteRow[] }) {
       <div className="d-toolbar">
         <div className="d-tabs" role="group" aria-label="Account">
           {(["dsa", "dev", "all"] as const).map((a) => (
-            <button key={a} className="d-tab" aria-pressed={active === a} onClick={() => setTab(a)}>
+            <button key={a} className="d-tab" aria-pressed={active === a} onClick={() => { setTab(a); setOpen(null); }}>
               {a === "dsa" ? "DSA" : a === "dev" ? "Dev" : "All"}
               <small>{count(a)}</small>
             </button>
@@ -66,27 +72,61 @@ export function NotesIndex({ notes }: { notes: NoteRow[] }) {
         </label>
       </div>
 
-      {groups.map((g) => (
-        <section key={g.key} className="d-group">
-          <h2 className="d-group-h">
-            {g.label} <span>{g.rows.length}</span>
-          </h2>
-          <ul className="d-list">
-            {g.rows.map((n) => (
-              <li key={n.href}>
-                <Link href={n.href} className="d-row">
-                  <span className="d-ep">{n.ep}</span>
-                  <span>
-                    <span className="d-row-title">{n.title}</span>
-                    {n.excerpt && <span className="d-row-sub">{n.excerpt}</span>}
-                  </span>
-                  <span className="d-row-tag">Read →</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
+      {searching || openGroup ? (
+        (openGroup ? [openGroup] : groups).map((g) => (
+          <section key={g.key} className="d-group">
+            {openGroup && (
+              <button className="d-back" onClick={() => setOpen(null)}>
+                ← All seasons
+              </button>
+            )}
+            <h2 className="d-group-h">
+              {g.label} <span>{g.rows.length}</span>
+            </h2>
+            <ul className="d-list">
+              {g.rows.map((n) => (
+                <li key={n.href}>
+                  <Link href={n.href} className="d-row">
+                    <span className="d-ep">{n.ep}</span>
+                    <span>
+                      <span className="d-row-title">{n.title}</span>
+                      {n.excerpt && <span className="d-row-sub">{n.excerpt}</span>}
+                    </span>
+                    <span className="d-row-tag">Read →</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      ) : (
+        <div className="d-seasons">
+          {groups.map((g) => (
+            <div key={g.key} className="d-season">
+              <button className="d-season-head" onClick={() => setOpen(g.key)}>
+                <span className="d-season-handle">{g.handle}</span>
+                <span className="d-season-name">{g.name}</span>
+                <span className="d-season-meta">
+                  {g.rows.length} notes · {g.range}
+                </span>
+              </button>
+              <ul className="d-season-list">
+                {g.rows.slice(0, 5).map((n) => (
+                  <li key={n.href}>
+                    <Link href={n.href}>
+                      <span className="d-ep">{n.ep}</span>
+                      <span className="d-season-t">{n.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <button className="d-season-more" onClick={() => setOpen(g.key)}>
+                {g.rows.length > 5 ? `Saare ${g.rows.length} notes dekho →` : "Open →"}
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
       {!total && <p className="d-empty">Is topic pe abhi notes nahi hain. Kisi reel pe comment karke batao.</p>}
     </>
   );
