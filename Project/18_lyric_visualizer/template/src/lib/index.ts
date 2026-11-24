@@ -10,3 +10,5 @@ export * from './theme';
 export * from './Stage';
 export * from './Type';
 export * from './Story';
+export * from './Painted';
+export * from './Lyric';
