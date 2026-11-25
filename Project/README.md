@@ -18,6 +18,9 @@ Sirf dekho mat, **banao**. Har project ka boilerplate ready hai; tum sirf woh co
 | 13 | [Island Counter](13_island_counter/) | Graphs EP 03 · DFS / Number of Islands | Grid DFS flood fill, bounds check (Python -1 trap) | Python + C++ |
 | 17 | [Stream Parts](17_stream_parts/) | @confuse__coder.dev · DEV 18 · Carry ka 9 ghante ka GTA 6 stream → clips | Split by time (not line count), prompt per part, yt-dlp sections + FFmpeg 9:16 | Python |
 | 18 | [Lyric Visualizer](18_lyric_visualizer/) | @confuse__coder.dev · DEV 24 · 1 Claude skill = ye lyric video | Claude skill: forced alignment (Whisper + demucs), theme + style per song, Remotion springs | Claude skill (Node + Python) |
+| 19 | [Auto Route Finder](19_auto_route_finder/) | Graphs EP 06 · Dijkstra | Min-heap of (distance, node), finalize on pop | Python + C++ |
+| 20 | [Shaadi Seating](20_shaadi_seating/) | Graphs EP 07 · Union-Find | find + union, path compression, union by size | Python + C++ |
+| 21 | [Bijli Network](21_bijli_network/) | Graphs EP 08 · Kruskal MST | Sort wires, skip when find(u) == find(v), stop at n − 1 | Python + C++ |
 | — | [Diwali Card Generator](diwali-site/) | @confuse__coder.dev | HTML + Canvas | Web |
 
 ## Kaise use karein

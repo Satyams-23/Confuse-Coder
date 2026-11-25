@@ -66,6 +66,9 @@ The projects in [`Project/`](Project/) put each concept into a small real-world 
 | 13 | [Island Counter](Project/13_island_counter/) | Count islands with DFS flood fill, paint each one, count your own satellite photo | Python, C++ |
 | 17 | [Stream Parts](Project/17_stream_parts/) | Long stream to AI-ready transcript parts with a prompt, then finished 9:16 clips (facecam on top, captions, credit) | Python |
 | 18 | [Lyric Visualizer](Project/18_lyric_visualizer/) | Claude skill: song + lyrics → word-synced animated lyric video (Hindi supported), theme and style per song | Claude skill (Node + Python) |
+| 19 | [Auto Route Finder](Project/19_auto_route_finder/) | Dijkstra on a city map: fastest route by minutes, not by number of stops | Python, C++ |
+| 20 | [Shaadi Seating](Project/20_shaadi_seating/) | Union-Find: how many tables, who sits where, and path compression on a 1-lakh chain | Python, C++ |
+| 21 | [Bijli Network](Project/21_bijli_network/) | Kruskal MST: cheapest wiring for every village, skipped wires, and the bug that leaves one dark | Python, C++ |
 | — | [Diwali Card Generator](Project/diwali-site/) | Client-side canvas rendering | HTML, JavaScript |
 
 **How to use a project**
