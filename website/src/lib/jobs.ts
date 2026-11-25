@@ -2,7 +2,7 @@
 // Rules: official link wherever possible, every entry has posted / last date / last checked.
 // Remove an entry as soon as its link is dead or its last date has passed. Update UPDATED on every change.
 
-export const UPDATED = "22 Nov 2026";
+export const UPDATED = "25 Nov 2026";
 
 export type Job = {
   company: string;
@@ -20,6 +20,19 @@ export type Job = {
 
 // Exams, drives and campus programmes (freshers / 0-2 yrs)
 export const DRIVES: Job[] = [
+  {
+    company: "Infosys",
+    role: "Off-campus: Specialist Programmer L1–L3 / Digital Specialist Engineer",
+    where: "In-person test + interview at Infosys centres",
+    exp: "2024, 2025, 2026 batch · BE/BTech/ME/MTech/MCA/MSc (5-yr)",
+    pay: "SP L3 ₹21 LPA · L2 ₹16 LPA · L1 ₹10 LPA + ₹1L bonus · DSE ₹6.25 LPA + ₹75K bonus",
+    posted: "Nov 2026",
+    lastDate: "30 Nov 2026",
+    status: "confirmed",
+    note: "3-hour in-person coding test. Not eligible if you took any Infosys / Infosys BPM selection process on or after 10 Sep 2026, or work at Infosys now.",
+    url: "https://surveys.infosysapps.com/r/a/DECSPDSEoffcampusregistration",
+    via: "surveys.infosysapps.com",
+  },
   {
     company: "TCS",
     role: "TCS iON NQT (December test)",
