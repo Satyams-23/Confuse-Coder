@@ -22,6 +22,7 @@ Sirf dekho mat, **banao**. Har project ka boilerplate ready hai; tum sirf woh co
 | 20 | [Shaadi Seating](20_shaadi_seating/) | Graphs EP 07 · Union-Find | find + union, path compression, union by size | Python + C++ |
 | 21 | [Bijli Network](21_bijli_network/) | Graphs EP 08 · Kruskal MST | Sort wires, skip when find(u) == find(v), stop at n − 1 | Python + C++ |
 | 22 | [Cashback Trip Planner](22_cashback_trip/) | Graphs EP 09 · Bellman-Ford | Relax every ticket n − 1 times, one more round to catch a cashback loop | Python + C++ |
+| 23 | [Party Brain](23_party_brain/) | AI/ML EP 02 · Neuron → Network | Weighted sum + bias + step; one neuron maxes 3/4 on XOR; 3 neurons in 2 layers get 4/4 | Python |
 | — | [Diwali Card Generator](diwali-site/) | @confuse__coder.dev | HTML + Canvas | Web |
 
 ## Kaise use karein

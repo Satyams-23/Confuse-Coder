@@ -70,6 +70,7 @@ The projects in [`Project/`](Project/) put each concept into a small real-world 
 | 20 | [Shaadi Seating](Project/20_shaadi_seating/) | Union-Find: how many tables, who sits where, and path compression on a 1-lakh chain | Python, C++ |
 | 21 | [Bijli Network](Project/21_bijli_network/) | Kruskal MST: cheapest wiring for every village, skipped wires, and the bug that leaves one dark | Python, C++ |
 | 22 | [Cashback Trip Planner](Project/22_cashback_trip/) | Bellman-Ford: cheapest trip with cashback (negative) tickets, Dijkstra's wrong answer side by side, and negative-cycle detection | Python, C++ |
+| 23 | [Party Brain](Project/23_party_brain/) | Neuron = weighted vote: write one neuron, prove one neuron can never solve XOR, then wire 3 neurons (OR, AND, AND-NOT) into a tiny network that does | Python |
 | — | [Diwali Card Generator](Project/diwali-site/) | Client-side canvas rendering | HTML, JavaScript |
 
 **How to use a project**
