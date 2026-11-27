@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { marked } from "marked";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Sections";
@@ -29,6 +29,7 @@ export default async function NotePage({ params }: Params) {
   const { account, slug } = await params;
   const note = getNote(account, slug);
   if (!note) notFound();
+  if (note.series === "roadmaps") redirect(noteHref(note)); // roadmaps live on /roadmaps/<slug>
 
   // Notes files are our own markdown, so rendering their HTML is safe.
   const html = marked.parse(note.markdown, { async: false, gfm: true }) as string;

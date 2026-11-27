@@ -23,16 +23,12 @@ export type Note = {
 };
 
 /** Reels whose DM keyword isn't "NOTES" (notes files no longer carry the "Comment X" line). */
-const KEYWORD_OVERRIDE: Record<string, string> = { "confuse_coder.dev/02_vpn.md": "VPN" };
+const KEYWORD_OVERRIDE: Record<string, string> = { "confuse_coder.dev/02_vpn.md": "VPN", "confuse_coder.dev/01_data_engineer.md": "ROADMAP" };
 
 /** Season order per sub-folder (root = first season). Newer seasons sort above older ones. */
-const SERIES_RANK: Record<string, number> = { "": 0, graphs: 1, aiml: 1 };
+const SERIES_RANK: Record<string, number> = { "": 0, graphs: 1, aiml: 1, roadmaps: 1 };
 
-/** "EP 03" or "GRAPHS EP 03" */
-export function epLabel(n: Pick<Note, "ep" | "series">): string {
-  const ep = `EP ${String(n.ep).padStart(2, "0")}`;
-  return n.series ? `${n.series === "aiml" ? "AI/ML" : n.series.toUpperCase()} ${ep}` : ep;
-}
+export { epLabel } from "./epLabel";
 
 export type Project = {
   slug: string;
@@ -149,6 +145,9 @@ export const ACCOUNT_SEG: Record<Account, "dsa" | "dev"> = { confuse_coder: "dsa
 export const SEG_ACCOUNT: Record<string, Account> = { dsa: "confuse_coder", dev: "confuse_coder.dev" };
 
 export function noteHref(n: Pick<Note, "account" | "slug">): string {
+  // career roadmaps have their own page: roadmaps-01_data_engineer -> /roadmaps/data-engineer
+  const road = n.slug.match(/^roadmaps-\d+_(.+)$/);
+  if (road) return `/roadmaps/${road[1].replace(/_/g, "-")}`;
   return `/notes/${ACCOUNT_SEG[n.account]}/${n.slug}`;
 }
 

@@ -4,6 +4,7 @@ import { motion, useInView, animate } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTheme } from "./ThemeProvider";
 import type { Note, Project } from "@/lib/content";
+import { epLabel } from "@/lib/epLabel";
 import Link from "next/link";
 import { YOUTUBE } from "@/lib/links";
 
@@ -142,7 +143,7 @@ export function NotesBento({ notes }: { notes: Note[] }) {
               )}
               <div className="note-top mono">
                 <span className="pill">{n.account === "confuse_coder.dev" ? ".dev" : "DSA"}</span>
-                <span>{n.series ? (n.series === "aiml" ? "AI/ML " : n.series.toUpperCase() + " ") : ""}EP {String(n.ep).padStart(2, "0")}</span>
+                <span>{epLabel(n)}</span>
               </div>
               <h3 className="note-title">
                 <Link href={`/notes/${n.account === "confuse_coder.dev" ? "dev" : "dsa"}/${n.slug}`}>{n.title}</Link>

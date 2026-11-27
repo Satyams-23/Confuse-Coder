@@ -721,3 +721,24 @@
   padding: 0;
   margin-bottom: 14px;
 }
+
+/* /roadmaps: role rows keep their Live / Coming soon tag on phones too */
+.d-row.d-road {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+.d-road .d-row-tag {
+  display: inline;
+}
+.d-road-live {
+  color: var(--d-link);
+}
+.d-row.d-road-soon {
+  cursor: default;
+  opacity: 0.6;
+}
+.d-row.d-road-soon:hover {
+  background: none;
+}
+.d-row.d-road-soon:hover .d-row-title {
+  color: inherit;
+}

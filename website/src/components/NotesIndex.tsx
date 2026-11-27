@@ -14,7 +14,7 @@ export type NoteRow = {
   keyword: string;
 };
 
-const SEASON_NAME: Record<string, string> = { "": "Recursion", graphs: "Graphs", aiml: "AI / ML" };
+const SEASON_NAME: Record<string, string> = { "": "Recursion", graphs: "Graphs", aiml: "AI / ML", roadmaps: "Career Roadmaps" };
 
 export function NotesIndex({ notes }: { notes: NoteRow[] }) {
   const { theme } = useTheme();

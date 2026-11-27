@@ -8,6 +8,7 @@ import { useTheme, type Theme } from "./ThemeProvider";
 const LINKS = [
   { href: "/notes", label: "Notes" },
   { href: "/projects", label: "Projects" },
+  { href: "/roadmaps", label: "Roadmaps" },
   { href: "/#playground", label: "Playground" },
   { href: "/#game", label: "Game" },
   { href: "/#contact", label: "Contact" },
